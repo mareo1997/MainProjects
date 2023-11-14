@@ -14,18 +14,18 @@ public class Main {
             System.out.println("3. Tablet");
             System.out.println("4. PCs");
             System.out.println("0. To exit");
-            System.out.println("");
+            System.out.println();
             System.out.println("Pick option");
             Scanner in = new Scanner(System.in);
             option = in.nextInt();
 
-            ArrayList<String> customer = null;
+            ArrayList<String> customer;
             if (option == 0) {
                 System.out.println("Exiting chat-bot.");
             } else if (option == 1 || option == 2 || option == 3 || option == 4) {
-                customer = customerInfo(option);
+                customer = customerInfo();
 
-                String device = null;
+                String device;
 
                 if(option == 1){
                     device = "Laptop";
@@ -33,13 +33,11 @@ public class Main {
                     device = "Mobile";
                 } else if(option == 3){
                     device = "Tablet";
-                } else if(option == 4){
+                } else {
                     device = "PC";
-//                } else {
-//                    device = "Other";
                 }
 
-                System.out.println("");
+                System.out.println();
                 System.out.println("Name: " + customer.get(0));
                 System.out.println("Mobile: " + customer.get(1));
                 System.out.println("Email: " + customer.get(2));
@@ -47,7 +45,7 @@ public class Main {
                 System.out.println("Best time to contact: " + customer.get(4));
                 System.out.println("Device: " + device);
                 System.out.println("Customer Issue: " + customer.get(5));
-                System.out.println("");
+                System.out.println();
                 Thread.sleep(5000);
 
             } else {
@@ -56,8 +54,8 @@ public class Main {
         }
     }
 
-    private static ArrayList<String> customerInfo(int option) {
-        ArrayList<String> customerInfo = new ArrayList<String>();
+    private static ArrayList<String> customerInfo() {
+        ArrayList<String> customerInfo = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         System.out.println("Enter name");
         customerInfo.add(in.nextLine());
