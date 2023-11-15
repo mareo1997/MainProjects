@@ -63,6 +63,10 @@ body {
   }
 
   #img{
-    width: 1000;
-    height: 500;
+    width: 250;
+    height: 200;
+  }
+
+  #bar{
+    width: 200;
   }
