@@ -1,3 +1,5 @@
+package Session1;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
