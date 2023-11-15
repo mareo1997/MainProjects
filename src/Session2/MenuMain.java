@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MenuMain {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         System.out.println("Welcome to the Ice Cream Shop");
         System.out.println("Please pick from the menu");
         System.out.println("1. Vanilla \t\t---------- $100");
@@ -26,19 +26,6 @@ public class MenuMain {
         Menu menu = new Menu(vanilla, chocolate, mint, strawberry);
 
         System.out.println(menu);
-
-//        switch(option){
-//            case 1:
-//                price += 100;
-//                break;
-//            case 2:
-//                price += 200;
-//                break;
-//            default:
-//                break;
-//        }
-
-
     }
 
 }
