@@ -1,23 +1,30 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Session 3</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
     <body class="jumbotron jumbotron-fluid">
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <form  name="signupForm" onsubmit="signup(event.preventDefault())">
-                    <label>Full Name: </label><input type="text" id="name" required pattern="[A-Za-z]">
-                    <br><br>
-                    <label>Email Address: </label><input type="email" id="email" required>
-                    <br><br>
-                    <label>Password: </label><input type="password" id="password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)">
-                    <br><br>
-                    <label>Confirm Password: </label><input type="password" id="repassword" required minlength="8">
-                    <br><br>
-                    <label>Phone Number: </label><input type="tel" id="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                    <br><br>
+                    <div class="form-group">
+                        <label>Full Name: </label><input type="text" class="form-control" id="name" required pattern="[A-Za-z]">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address: </label><input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password: </label><input type="password" class="form-control" id="password" required minlength="8">
+                         <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)"> -->
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password: </label><input type="password" class="form-control" id="repassword" required minlength="8" onkeyup="valid()">
+                    </div>
+                    <div class="form-group">                    
+                        <label>Phone Number: </label><input type="tel" class="form-control" id="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    </div>
                     <button id="login" type="submit" class="btn btn-primary" value="Submit">Submit</button>
                 </form>
             </div>

@@ -1,3 +1,5 @@
+document.getElementById("login").disabled = true;
+
 function signup(){
 
     let signupForm = document.signupForm;
@@ -21,4 +23,20 @@ function signup(){
 	}
 
     alert("Success");
+}
+
+function valid(){
+
+    able = true
+    
+    let repassword = document.getElementById('repassword').value;
+	let password = document.getElementById('password').value;
+
+    if(repassword.length >= 8 && password.length >= 8){
+        able = false
+    }
+
+
+    document.getElementById("login").disabled = able;
+
 }
