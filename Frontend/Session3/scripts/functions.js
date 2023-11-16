@@ -8,6 +8,10 @@ function signup(){
 	let password = document.getElementById('password').value;
 	let repassword = document.getElementById('repassword').value;
 
+    if(password != repassword){
+        alert("Passwords don't match")
+    }
+
     const signuptemplate = {
 		name: name,
 		email: email,
