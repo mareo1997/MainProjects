@@ -6,11 +6,11 @@ public class Menu {
     private final int chocolateAmount = 200;
     private final int mintAmount = 250;
     private final int strawberryAmount = 150;
-    int vanilla;
-    int chocolate;
-    int mint;
-    int strawberry;
-    int quantity;
+    private int vanilla;
+    private int chocolate;
+    private int mint;
+    private int strawberry;
+    private int quantity;
 
     public Menu(int vanilla, int chocolate, int mint, int strawberry) {
         this.vanilla = vanilla;
@@ -20,8 +20,8 @@ public class Menu {
         this.quantity = vanilla + chocolate + strawberry + mint;
     }
 
-    public int order() {
-        return (this.vanilla * vanillaAmount) + (this.chocolate * chocolateAmount) + (this.mint * mintAmount) + (this.strawberry * strawberryAmount);
+    public int processOrder() {
+        return (getVanilla() * vanillaAmount) + (getChocolate() * chocolateAmount) + (getMint() * mintAmount) + (getStrawberry() * strawberryAmount);
     }
 
     @Override
@@ -45,6 +45,7 @@ public class Menu {
         result = result.concat("---------------------------------------------------------------------\n" + "Total amount is \t\t\t\t\t " + quantity + "\t\t\t$" + order());
 
         return result;
+
     }
 
     public int getVanilla() {
@@ -63,4 +64,27 @@ public class Menu {
         return chocolate;
     }
 
+    public void setVanilla(int vanilla) {
+        this.vanilla = vanilla;
+    }
+
+    public void setChocolate(int chocolate) {
+        this.chocolate = chocolate;
+    }
+
+    public void setMint(int mint) {
+        this.mint = mint;
+    }
+
+    public void setStrawberry(int strawberry) {
+        this.strawberry = strawberry;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
