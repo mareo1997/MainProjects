@@ -25,36 +25,29 @@ public class Student {
         double avgGrade = averageGrade(total, getMarks().size());
         String grade = letterGrade(avgGrade);
 
-        String result =
-                "*************UA High School***********\n" +
-                        "Name\t\t" + getName() + "\n" +
-                        "Class\t\t" + getClassNumber() + "\n" +
-                        "Subject\t\tMarks\n" +
-                        "Math\t\t" + getMarks().get(0) + "\n" +
-                        "Science\t\t" + getMarks().get(1) + "\n" +
-                        "English\t\t" + getMarks().get(2) + "\n" +
-                        "Computer\t" + getMarks().get(3) + "\n" +
-                        "Science\n" +
-                "**************************************\n" +
-                        "\t\t\tTotal = "+total + "\n" +
-                        "\t\t\tGPA = "+avgGrade + "\n" +
-                        "\t\t\tGrade = "+grade;
-
-        return result;
+        return "*************UA High School***********\n" +
+                "Name\t\t" + getName() + "\n" +
+                "Class\t\t" + getClassNumber() + "\n" +
+                "Subject\t\tMarks\n" +
+                "Math\t\t" + getMarks().get(0) + "\n" +
+                "Science\t\t" + getMarks().get(1) + "\n" +
+                "English\t\t" + getMarks().get(2) + "\n" +
+                "Computer\t" + getMarks().get(3) + "\n" +
+                "Science\n" +
+        "**************************************\n" +
+                "\t\t\tTotal = "+total + "\n" +
+                "\t\t\tGPA = "+avgGrade + "\n" +
+                "\t\t\tGrade = "+grade;
     }
 
     public int totalMarks(ArrayList<Integer> marks) {
 
-        int totalMarks = marks.stream().mapToInt(v -> v).sum();
-
-        return totalMarks;
+        return marks.stream().mapToInt(v -> v).sum();
     }
 
     public double averageGrade(int totalMarks, int length) {
 
-        double result = (double) totalMarks / (double) length;
-
-        return result;
+        return (double) totalMarks / (double) length;
 
     }
 
