@@ -27,14 +27,28 @@ public class Menu {
     @Override
     public String toString() {
 
-        return "--------------------------------------------------------------------\n" +
-                "Sl.no\t\t  Flavour\t     Price\t Quantity\tAmount\n" +
-                "1\t\t      Vanilla\t     $100\t " + getVanilla() + "\t\t\t$" + getVanilla() * vanillaAmount + "\n" +
-                "2\t\t      Chocolate\t     $200\t " + getChocolate() + "\t\t\t$" + getChocolate() * chocolateAmount + "\n" +
-                "3\t\t      Mint\t         $250\t " + getMint() + "\t\t\t$" + getMint() * mintAmount + "\n" +
-                "4\t\t      Strawberry     $150\t " + getStrawberry() + "\t\t\t$" + getStrawberry() * strawberryAmount + "\n" +
-                "---------------------------------------------------------------------\n" +
-                "Total amount is \t\t\t\t\t " + getQuantity() + "\t\t\t$" + processOrder();
+        String result = """
+                --------------------------------------------------------------------
+                Sl.no\t\t  Flavour\t     Price\t Quantity\tAmount
+                """;
+
+        if(getVanilla()>0){
+            result = result.concat("1\t\t      Vanilla\t     $100\t " + getVanilla() + "\t\t\t$" + getVanilla() * vanillaAmount + "\n");
+        }
+        if(getChocolate()>0){
+            result = result.concat("2\t\t      Chocolate\t     $200\t " + getChocolate() + "\t\t\t$" + getChocolate() * chocolateAmount + "\n");
+        }
+        if(getMint()>0){
+            result = result.concat("3\t\t      Mint\t         $250\t " + getMint() + "\t\t\t$" + getMint() * mintAmount + "\n");
+        }
+        if(getStrawberry()>0){
+            result = result.concat("4\t\t      Strawberry     $150\t " + getStrawberry() + "\t\t\t$" + getStrawberry() * strawberryAmount + "\n");
+        }
+
+        result = result.concat("---------------------------------------------------------------------\n" + "Total amount is \t\t\t\t\t " + quantity + "\t\t\t$" + processOrder());
+
+        return result;
+
     }
 
     public int getVanilla() {
@@ -51,29 +65,5 @@ public class Menu {
 
     public int getChocolate() {
         return chocolate;
-    }
-
-    public void setVanilla(int vanilla) {
-        this.vanilla = vanilla;
-    }
-
-    public void setChocolate(int chocolate) {
-        this.chocolate = chocolate;
-    }
-
-    public void setMint(int mint) {
-        this.mint = mint;
-    }
-
-    public void setStrawberry(int strawberry) {
-        this.strawberry = strawberry;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 }
