@@ -10,7 +10,7 @@
             <div class="container">
                 <form  name="signupForm" onsubmit="signup(event.preventDefault())">
                     <div class="form-group">
-                        <label>Full Name: </label><input type="text" class="form-control" id="name" required pattern="[A-Za-z]">
+                        <label>Full Name: </label><input type="text" class="form-control" id="name" required pattern="^[A-Za-z \-]*$">
                     </div>
                     <div class="form-group">
                         <label>Email Address: </label><input type="email" class="form-control" id="email" required>
