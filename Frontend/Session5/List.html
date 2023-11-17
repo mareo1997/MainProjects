@@ -1,19 +1,41 @@
 <html>
     <head>
         <title>To Do List</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
-    <body>
-        <h1>Enter tasks</h1>
-        <form  name="signupForm" onsubmit="addTask(event.preventDefault())">
-            <label>Title</label><input type="text" id="title">
+    <body class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1>Enter tasks</h1>
+            <form  name="signupForm" onsubmit="addTask(event.preventDefault())">
+                <div class="form-group">
+                <label>Title</label><input type="text" id="title" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Description</label><input type="text" id="description" class="form-control">
+                </div>
+                <br>
+                <button id="login" type="submit" class="btn btn-primary" value="Submit">ADD to Tasks</button>
+            </form>
             <br>
-            <label>Description</label><input type="text" id="description">
-            <br>
-            <button id="login" type="submit" class="btn btn-primary" value="Submit">ADD to Tasks</button>
-        </form>
-        <br><br>
-        <h1>Current tasks</h1>
-        <div id="warningText"></div>
-        <script src="scripts/functions.js"></script>
+            </div>
+            <div class="container">
+                <h1>Current tasks</h1>
+                <div id="warningText" class="form-group"></div>
+            </div>
+            <div class="container">
+                <select id="filter" onchange="filter()">
+                <option id="all" value="all" >All</option>
+                <option id="active" value="active" >Active</option>
+                <option id="completed" value="completed">Completed</option>
+            </select>
+    
+            <button class="btn btn-primary">Done</button>
+            <button class="btn btn-primary">Delete</button>
+            <button class="btn btn-primary" onclick="removeCompleted()">Clear Completed</button>
+            <script src="scripts/functions.js"></script>
+            </div>
+        </div>
     </body>
 </html>
