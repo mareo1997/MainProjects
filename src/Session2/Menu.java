@@ -27,7 +27,10 @@ public class Menu {
     @Override
     public String toString() {
 
-        String result = "--------------------------------------------------------------------\n" + "Sl.no\t\t  Flavour\t     Price\t Quantity\tAmount\n";
+        String result = """
+                --------------------------------------------------------------------
+                Sl.no\t\t  Flavour\t     Price\t Quantity\tAmount
+                """;
 
         if(getVanilla()>0){
             result = result.concat("1\t\t      Vanilla\t     $100\t " + getVanilla() + "\t\t\t$" + getVanilla() * vanillaAmount + "\n");
@@ -62,29 +65,5 @@ public class Menu {
 
     public int getChocolate() {
         return chocolate;
-    }
-
-    public void setVanilla(int vanilla) {
-        this.vanilla = vanilla;
-    }
-
-    public void setChocolate(int chocolate) {
-        this.chocolate = chocolate;
-    }
-
-    public void setMint(int mint) {
-        this.mint = mint;
-    }
-
-    public void setStrawberry(int strawberry) {
-        this.strawberry = strawberry;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 }
