@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>To Do List</title>
+    </head>
+    <body>
+        <h1>Enter tasks</h1>
+        <form  name="signupForm" onsubmit="addTask(event.preventDefault())">
+            <label>Title</label><input type="text" id="title">
+            <br>
+            <label>Description</label><input type="text" id="description">
+            <br>
+            <button id="login" type="submit" class="btn btn-primary" value="Submit">ADD to Tasks</button>
+        </form>
+        <br><br>
+        <h1>Current tasks</h1>
+        <div id="warningText"></div>
+        <script src="scripts/functions.js"></script>
+    </body>
+</html>
