@@ -42,7 +42,7 @@ public class Menu {
             result = result.concat("4\t\t      Strawberry     $150\t " + getStrawberry() + "\t\t\t$" + getStrawberry() * strawberryAmount + "\n");
         }
 
-        result = result.concat("---------------------------------------------------------------------\n" + "Total amount is \t\t\t\t\t " + quantity + "\t\t\t$" + order());
+        result = result.concat("---------------------------------------------------------------------\n" + "Total amount is \t\t\t\t\t " + quantity + "\t\t\t$" + processOrder());
 
         return result;
 

@@ -32,6 +32,8 @@ public class Main {
 
                 Student student = new Student(name, id, classNumber, marks);
                 System.out.println(student);
+                Thread.sleep(4000);
+                System.out.println();
 
             } catch (InputMismatchException e){
                 System.out.println("The information you entered is not correct please try again.");
