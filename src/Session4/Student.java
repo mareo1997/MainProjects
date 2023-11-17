@@ -27,6 +27,7 @@ public class Student {
 
         return "*************UA High School***********\n" +
                 "Name\t\t" + getName() + "\n" +
+                "Student ID\t" + getId() + "\n" +
                 "Class\t\t" + getClassNumber() + "\n" +
                 "Subject\t\tMarks\n" +
                 "Math\t\t" + getMarks().get(0) + "\n" +
@@ -72,32 +73,16 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getClassNumber() {
         return classNumber;
     }
 
-    public void setClassNumber(String classNumber) {
-        this.classNumber = classNumber;
-    }
-
     public ArrayList<Integer> getMarks() {
         return marks;
-    }
-
-    public void setMarks(ArrayList<Integer> marks) {
-        this.marks = marks;
     }
 
 }
