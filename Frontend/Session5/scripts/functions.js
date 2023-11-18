@@ -22,13 +22,13 @@ let toDoList = [
     }
 ];
 
-// localStorage.setItem("records",JSON.stringify(toDoList));
+localStorage.setItem("records",JSON.stringify(toDoList));
 
-let storage = localStorage.getItem("records")
+storage = localStorage.getItem("records")
 
 onload(JSON.parse(storage))
 
-function onload(toDoList){
+function onload(storage){
     const head = document.querySelector('thead');
     let headtags = "";
 
@@ -40,13 +40,17 @@ function onload(toDoList){
 
     head.innerHTML = headtags
 
-    fill(toDoList)
+    fill(storage)
 }
 
-function fill(toDoList){
+function fill(storage){
 
     const body = document.querySelector('tbody');
     let tags = "";
+
+    let toDoList = storage
+
+    console.log(toDoList)
 
     toDoList.forEach(d => {
         // console.log(d)
@@ -63,11 +67,16 @@ function fill(toDoList){
 
     localStorage.setItem("records", JSON.stringify(toDoList))
 
+    // toDoList = localStorage.getItem("records")
+
 }
 
 function addTask(){
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
+
+    let storage = localStorage.getItem("records")
+    toDoList = JSON.parse(storage)
 
     let task = {
         id: toDoList.length+1,
@@ -75,6 +84,8 @@ function addTask(){
         description: description,
         status: "ACTIVE"
     }
+
+    // toDoList = JSON.parse(storage)
 
     toDoList.push(task)
     document.getElementById('title').value = "";
@@ -87,16 +98,20 @@ function addTask(){
 }
 
 function markCompleted(id){
+
+    let storage = localStorage.getItem("records")
+    toDoList = JSON.parse(storage)
+
     for(i = 0; i < toDoList.length; i++){
         console.log(toDoList[i])
         if(toDoList[i].id == id){
-            console.log(toDoList[i])
-            toDoList[id].status = "COMPLETED"
+            console.log(toDoList[i].status)
+            toDoList[i].status = "COMPLETED"
             break;
         }
     }
 
-    // console.log(toDoList)
+    console.log(toDoList)
 
     fill(toDoList);
 
@@ -105,6 +120,9 @@ function markCompleted(id){
 }
 
 function deleteTask(id){
+
+    let storage = localStorage.getItem("records")
+    toDoList = JSON.parse(storage)
 
     let temp = toDoList.filter((e) => e.id != id)
 
@@ -121,6 +139,9 @@ function deleteTask(id){
 
 function removeCompleted(){
 
+    let storage = localStorage.getItem("records")
+    toDoList = JSON.parse(storage)
+
     toDoList = toDoList.filter((e) => e.status != "COMPLETED")
 
     fill(toDoList);
@@ -132,39 +153,70 @@ function removeCompleted(){
 }
 
 function filter(){
+    let storage = localStorage.getItem("records")
+    toDoList = JSON.parse(storage)
+
     let d = document.getElementById("filter").value;
 
     if(d == 'all'){
         // alert(d)
-        fill(toDoList);
+        fillTemp(toDoList);
     } else {
         let temp = toDoList.filter((e) => e.status.toLowerCase() == d);
         // console.log(temp)
-        fill(temp)
+        fillTemp(temp)
     } 
 }
 
-function renderHTML(data){
-    let input = document.getElementById('warningText')
-	input.textContent = "";
+function fillTemp(storage){
 
-	for (var i = 0; i < data.length; i++) {
-        input.append("Id: " + data[i].id);
-		input.append(document.createElement("br"));
+    const body = document.querySelector('tbody');
+    let tags = "";
 
-        input.append("Title: " + data[i].title);
-		input.append(document.createElement("br"));
+    let toDoList = storage
 
-		input.append("Description: " + data[i].description);
-		input.append(document.createElement("br"));
+    console.log(toDoList)
 
-		input.append("Status: " + data[i].status);
-		input.append(document.createElement("br"));
+    toDoList.forEach(d => {
+        // console.log(d)
+        tags += `
+            <tr>
+            <td>${d.title}</td>
+            <td>${d.description}</td>
+            <td>${d.status}</td>
+            <td><button class="btn btn-primary" onclick="markCompleted(${d.id})">Done</button></td>
+            <td><button class="btn btn-danger" onclick="deleteTask(${d.id})">Delete</button></td>
+        `
+    })
+    body.innerHTML = tags
 
-        // input.append(document.createElement("button"));
-		input.append(document.createElement("br"));
-		// input.append(document.createElement("br"));
+    // localStorage.setItem("records", JSON.stringify(toDoList))
 
-    }
+    // toDoList = localStorage.getItem("records")
 
 }
+
+// function renderHTML(data){
+//     let input = document.getElementById('warningText')
+// 	input.textContent = "";
+
+// 	for (var i = 0; i < data.length; i++) {
+//         input.append("Id: " + data[i].id);
+// 		input.append(document.createElement("br"));
+
+//         input.append("Title: " + data[i].title);
+// 		input.append(document.createElement("br"));
+
+// 		input.append("Description: " + data[i].description);
+// 		input.append(document.createElement("br"));
+
+// 		input.append("Status: " + data[i].status);
+// 		input.append(document.createElement("br"));
+
+//         // input.append(document.createElement("button"));
+// 		input.append(document.createElement("br"));
+// 		// input.append(document.createElement("br"));
+
+//     }
+
+// }
