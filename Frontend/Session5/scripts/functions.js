@@ -28,7 +28,7 @@ storage = localStorage.getItem("records")
 
 onload(JSON.parse(storage))
 
-function onload(storage){
+function onload(storage) {
     const head = document.querySelector('thead');
     let headtags = "";
 
@@ -43,7 +43,7 @@ function onload(storage){
     fill(storage)
 }
 
-function fill(storage){
+function fill(storage) {
 
     const body = document.querySelector('tbody');
     let tags = "";
@@ -68,7 +68,7 @@ function fill(storage){
     localStorage.setItem("records", JSON.stringify(toDoList))
 }
 
-function addTask(){
+function addTask() {
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
 
@@ -76,7 +76,7 @@ function addTask(){
     toDoList = JSON.parse(storage)
 
     let task = {
-        id: toDoList.length+1,
+        id: toDoList.length + 1,
         title: title,
         description: description,
         status: "ACTIVE"
@@ -90,13 +90,13 @@ function addTask(){
     fill(toDoList)
 }
 
-function markCompleted(id){
+function markCompleted(id) {
 
     let storage = localStorage.getItem("records")
     toDoList = JSON.parse(storage)
 
-    for(i = 0; i < toDoList.length; i++){
-        if(toDoList[i].id == id){
+    for (i = 0; i < toDoList.length; i++) {
+        if (toDoList[i].id == id) {
             toDoList[i].status = "COMPLETED"
             break;
         }
@@ -107,7 +107,7 @@ function markCompleted(id){
     fill(toDoList);
 }
 
-function deleteTask(id){
+function deleteTask(id) {
 
     let storage = localStorage.getItem("records")
     toDoList = JSON.parse(storage)
@@ -121,7 +121,7 @@ function deleteTask(id){
     //^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
 }
 
-function removeCompleted(){
+function removeCompleted() {
 
     let storage = localStorage.getItem("records")
     toDoList = JSON.parse(storage)
@@ -133,21 +133,21 @@ function removeCompleted(){
     document.getElementById("filter").value = 'all'
 }
 
-function filter(){
+function filter() {
     let storage = localStorage.getItem("records")
     toDoList = JSON.parse(storage)
 
     let d = document.getElementById("filter").value;
 
-    if(d == 'all'){
+    if (d == 'all') {
         fillTemp(toDoList);
     } else {
         let temp = toDoList.filter((e) => e.status.toLowerCase() == d);
         fillTemp(temp)
-    } 
+    }
 }
 
-function fillTemp(storage){
+function fillTemp(storage) {
 
     const body = document.querySelector('tbody');
     let tags = "";

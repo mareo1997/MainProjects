@@ -1,15 +1,17 @@
 <html>
-    <head>
-        <title>To Do List</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    </head>
-    <body class="jumbotron jumbotron-fluid">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1>Enter tasks</h1>
-            <form  name="signupForm" onsubmit="addTask(event.preventDefault())">
+
+<head>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Enter tasks</h1>
+            <form name="signupForm" onsubmit="addTask(event.preventDefault())">
                 <div class="form-group">
-                <label>Title</label><input type="text" id="title" class="form-control">
+                    <label>Title</label><input type="text" id="title" class="form-control">
                 </div>
                 <br>
                 <div class="form-group">
@@ -19,31 +21,30 @@
                 <button id="login" type="submit" class="btn btn-primary" value="Submit">ADD to Tasks</button>
             </form>
             <br>
-            </div>
-            <div class="container">
-                <select id="filter" onchange="filter()">
-                <option id="all" value="all" >All</option>
-                <option id="active" value="active" >Active</option>
-                <option id="completed" value="completed">Completed</option>
-                </select>
-            </div>
-            <br>
-            <!-- <button class="btn btn-primary">Done</button>
-            <button class="btn btn-primary">Delete</button> -->
-
-            <div class="container">
-                <table>
-                    <thead></thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-            <br>
-            <br>
-            <div class="container">
-                <button class="btn btn-secondary" onclick="removeCompleted()">Clear Completed</button>
-            </div>
-            <script src="scripts/functions.js"></script>
-            </div>
         </div>
-    </body>
+        <div class="container">
+            <select id="filter" onchange="filter()">
+                <option id="all" value="all">All</option>
+                <option id="active" value="active">Active</option>
+                <option id="completed" value="completed">Completed</option>
+            </select>
+        </div>
+        <br>
+        <div class="container">
+            <h1>Current tasks</h1>
+            <table>
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <button class="btn btn-secondary" onclick="removeCompleted()">Clear Completed</button>
+        </div>
+        <script src="scripts/functions.js"></script>
+    </div>
+    </div>
+</body>
+
 </html>
