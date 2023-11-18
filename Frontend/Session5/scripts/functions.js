@@ -2,12 +2,12 @@ let toDoList = [
     {
         id: 1,
         title: "John Doe",
-        description: "30",
+        description: "30 years old",
         status: "COMPLETED"
     },{
         id: 2,
-        title: "",
-        description: "",
+        title: "No title",
+        description: "Non descript",
         status: "ACTIVE"
     },{
         id: 3,
@@ -22,7 +22,48 @@ let toDoList = [
     }
 ];
 
-renderHTML(toDoList)
+// localStorage.setItem("records",JSON.stringify(toDoList));
+
+let storage = localStorage.getItem("records")
+
+onload(JSON.parse(storage))
+
+function onload(toDoList){
+    const head = document.querySelector('thead');
+    let headtags = "";
+
+    headtags += `
+    <th>Title</th>
+    <th>Description</th>
+    <th>Status</th>
+    `
+
+    head.innerHTML = headtags
+
+    fill(toDoList)
+}
+
+function fill(toDoList){
+
+    const body = document.querySelector('tbody');
+    let tags = "";
+
+    toDoList.forEach(d => {
+        // console.log(d)
+        tags += `
+            <tr>
+            <td>${d.title}</td>
+            <td>${d.description}</td>
+            <td>${d.status}</td>
+            <td><button class="btn btn-primary" onclick="markCompleted(${d.id})">Done</button></td>
+            <td><button class="btn btn-danger" onclick="deleteTask(${d.id})">Delete</button></td>
+        `
+    })
+    body.innerHTML = tags
+
+    localStorage.setItem("records", JSON.stringify(toDoList))
+
+}
 
 function addTask(){
     let title = document.getElementById('title').value;
@@ -40,16 +81,41 @@ function addTask(){
     document.getElementById('description').value = "";
     console.log(toDoList)
 
-    renderHTML(toDoList)
+    fill(toDoList)
+
+    // localStorage.setItem("records", JSON.stringify(toDoList))
+}
+
+function markCompleted(id){
+    for(i = 0; i < toDoList.length; i++){
+        console.log(toDoList[i])
+        if(toDoList[i].id == id){
+            console.log(toDoList[i])
+            toDoList[id].status = "COMPLETED"
+            break;
+        }
+    }
+
+    // console.log(toDoList)
+
+    fill(toDoList);
+
+    // localStorage.setItem("records", JSON.stringify(toDoList))
+
 }
 
 function deleteTask(id){
 
-    for (var i = 0; i < toDoList.length; i++) {
-        if(toDoList[i].id == id){
-            toDoList.pop(i)
-        }
-    }
+    let temp = toDoList.filter((e) => e.id != id)
+
+    toDoList = temp
+
+    console.log(toDoList)
+
+    fill(toDoList);
+
+    // localStorage.setItem("records", JSON.stringify(toDoList))
+
 //^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
 }
 
@@ -57,10 +123,12 @@ function removeCompleted(){
 
     toDoList = toDoList.filter((e) => e.status != "COMPLETED")
 
-    renderHTML(toDoList);
+    fill(toDoList);
 
     document.getElementById("filter").value = 'all'
     // console.log(toDoList)
+
+    // localStorage.setItem("records", JSON.stringify(toDoList))
 }
 
 function filter(){
@@ -68,11 +136,11 @@ function filter(){
 
     if(d == 'all'){
         // alert(d)
-        renderHTML(toDoList);
+        fill(toDoList);
     } else {
         let temp = toDoList.filter((e) => e.status.toLowerCase() == d);
         // console.log(temp)
-        renderHTML(temp)
+        fill(temp)
     } 
 }
 
@@ -98,4 +166,5 @@ function renderHTML(data){
 		// input.append(document.createElement("br"));
 
     }
+
 }
