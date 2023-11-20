@@ -1,0 +1,44 @@
+Task: Interactive Form Validation
+
+Description:
+Create a form with the following fields:
+Full NameX
+Email AddressX
+PasswordX
+Confirm PasswordX
+Phone NumberX
+
+Requirements:
+Full Name:
+Should not be empty.X
+Should only contain alphabetical characters.X
+
+Email Address:
+Should not be empty.X
+Should be a valid email address.X
+
+Password:
+Should not be empty.X
+Should be at least 8 characters long.X
+Should contain at least one uppercase letter, one lowercase letter, one number, and one special character.
+Confirm Password:
+Should match the entered password.X
+
+Phone Number:
+Should not be empty.X
+Should be a valid phone number format.X
+
+Additional Requirements:
+Display error messages next to the corresponding input fields if the entered data is invalid.
+Disable the form submission button until all fields are valid.
+Change the border color of the input fields to red when there's an error and green when the input is valid.
+Provide real-time validation (validate as the user types).
+
+Hints:
+Use regular expressions for pattern matching.X
+Consider using event listeners for real-time validation.
+You may choose to use external libraries like Bootstrap for styling or implement your own styles.X
+Optional:
+Add a confirmation message or animation when the form is successfully submitted.X
+
+This task combines HTML for the structure, CSS for styling, and JavaScript for dynamic behavior and validation. It requires knowledge of form handling, regular expressions, event handling, and DOM manipulation.

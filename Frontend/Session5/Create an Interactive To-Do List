@@ -1,0 +1,12 @@
+Create an Interactive To-Do List
+
+Requirements:
+
+Use HTML for the structure, CSS for styling, and JavaScript for interactivity.X
+The to-do list should have the following features:
+Add new tasks with a "Add" button.X
+Mark tasks as complete with a "Done" button.X
+Delete tasks with a "Delete" button.X
+Filter tasks as "All," "Active," or "Completed."X
+Clear completed tasks with a "Clear Completed" button.X
+Use local storage to persist tasks even after the page is refreshed.X
