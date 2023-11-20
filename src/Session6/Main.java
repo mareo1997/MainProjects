@@ -1,20 +1,21 @@
 package Session6;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        boolean stop = false;
         Scanner in = new Scanner(System.in);
 
-        ArrayList<Student> studentArraylist = new ArrayList<Student>();
+        ArrayList<Student> studentArraylist = new ArrayList<>();
         Student student = new Student("Mareo", 5, "1A");
         studentArraylist.add(student);
 
-        while(!stop) {
+        while (true) {
             System.out.println("Student information for end of term report card");
 //            System.out.println("Type zero to exit");
 
@@ -23,9 +24,6 @@ public class Main {
                 System.out.println("Enter student information below");
                 System.out.println("Enter student name");
                 String name = in.nextLine();
-//                if(name.equalsIgnoreCase("0")){
-//                    break;
-//                }
 
                 System.out.println("Enter student id");
                 int id = in.nextInt();
@@ -43,6 +41,8 @@ public class Main {
                 if (answer.equalsIgnoreCase("YES")) {
                     break;
                 }
+                Thread.sleep(4000);
+                System.out.println();
 //                in.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("The information you entered is not correct please try again.");
@@ -52,15 +52,15 @@ public class Main {
 
         System.out.println(studentArraylist);
 
-        while(true){
-            try{
+        while (true) {
+            try {
                 System.out.println("Please enter the student id");
                 int id = in.nextInt();
                 in.nextLine();  // Consume newline left-over
 
-                List<Student> result = studentArraylist.stream().filter(x -> x.getId() == id).collect(Collectors.toList());
+                List<Student> result = studentArraylist.stream().filter(x -> x.getId() == id).toList();
 
-                if(result.size()>0){
+                if (result.size() > 0) {
                     System.out.println("Enter the following grades for:\nMath\nScience\nEnglish\nComputer Science");
                     ArrayList<Integer> marks = new ArrayList<>();
                     marks.add(in.nextInt());
@@ -83,39 +83,13 @@ public class Main {
                     break;
                 }
 
-            } catch (NullPointerException e){
-                System.out.println("The information you entered is not correct please try again.");
-                System.out.println();
-            } catch (InputMismatchException e){
+            } catch (NullPointerException | InputMismatchException e) {
                 System.out.println("The information you entered is not correct please try again.");
                 System.out.println();
             }
 
 
         }
-
-//        System.out.println("Enter the following grades for:\nMath\nScience\nEnglish\nComputer Science");
-//
-//
-//
-//                System.out.println("Enter the following grades for:\nMath\nScience\nEnglish\nComputer Science");
-//                ArrayList<Integer> marks = new ArrayList<>();
-//                marks.add(in.nextInt());
-//                marks.add(in.nextInt());
-//                marks.add(in.nextInt());
-//                marks.add(in.nextInt());
-//
-//                Student student = new Student(name, id, classNumber, marks);
-//                System.out.println(student);
-//                Thread.sleep(4000);
-//                System.out.println();
-//
-//            } catch (InputMismatchException e){
-//                System.out.println("The information you entered is not correct please try again.");
-//                System.out.println();
-//            }
-//        }
-
 
     }
 }

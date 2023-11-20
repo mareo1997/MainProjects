@@ -2,7 +2,7 @@ package Session6;
 
 import java.util.ArrayList;
 
-public class ReportCard implements Grading{
+public class ReportCard implements Grading {
 
     private Student student;
 
@@ -13,7 +13,6 @@ public class ReportCard implements Grading{
         this.marks = marks;
     }
 
-
     @Override
     public String toString() {
         int total = totalMarks(getMarks());
@@ -21,20 +20,19 @@ public class ReportCard implements Grading{
         String grade = letterGrade(avgGrade);
 
         return "*************UA High School***********\n" +
-                "Name\t\t" + student.getName() + "\n" +
-                "Student ID\t" + student.getId() + "\n" +
-                "Class\t\t" + student.getClassNumber() + "\n" +
+                "Name\t\t" + getStudent().getName() + "\n" +
+                "Student ID\t" + getStudent().getId() + "\n" +
+                "Class\t\t" + getStudent().getClassNumber() + "\n" +
                 "Subject\t\tMarks\n" +
                 "Math\t\t" + getMarks().get(0) + "%\n" +
                 "Science\t\t" + getMarks().get(1) + "%\n" +
                 "English\t\t" + getMarks().get(2) + "%\n" +
                 "Computer\t" + getMarks().get(3) + "%\n" +
                 "Science\n" +
-        "**************************************\n" +
-                "\t\t\tTotal = "+total + "\n" +
-                "\t\t\tGPA = "+avgGrade + "\n" +
-                "\t\t\tGrade = "+grade;
-//        return grade;
+                "**************************************\n" +
+                "\t\t\tTotal = " + total + "\n" +
+                "\t\t\tGPA = " + avgGrade + "\n" +
+                "\t\t\tGrade = " + grade;
     }
 
     @Override
@@ -61,30 +59,15 @@ public class ReportCard implements Grading{
             return "D";
         } else {
             return "F";
-        }    }
-
-//    public int getStudent() {
-//        return student;
-//    }
-//
-//    public void setStudent(int student) {
-//        this.student = student;
-//    }
-
+        }
+    }
 
     public Student getStudent() {
         return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
     }
 
     public ArrayList<Integer> getMarks() {
         return marks;
     }
 
-    public void setMarks(ArrayList<Integer> marks) {
-        this.marks = marks;
-    }
 }

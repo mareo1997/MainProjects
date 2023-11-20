@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public interface Grading {
 
-     int totalMarks(ArrayList<Integer> marks);
+    int totalMarks(ArrayList<Integer> marks);
 
-     double averageGrade(int totalMarks, int length);
+    double averageGrade(int totalMarks, int length);
 
-     String letterGrade(double avgGrade);
+    String letterGrade(double avgGrade);
 
 }
