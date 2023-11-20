@@ -22,6 +22,12 @@ Interface Segregation Principle (ISP):
 A client should not be forced to depend on interfaces it does not use.
 This principle suggests that a class should not be forced to implement interfaces it does not use. Instead of having a large, monolithic interface, it's better to have smaller, more specific interfaces tailored to the needs of the implementing classes.
 
+Dependency Inversion Principle (DIP):
+
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
+Abstractions should not depend on details. Details should depend on abstractions.
+This principle encourages the use of dependency injection and inversion of control to achieve a decoupled and flexible design. High-level modules (e.g., business logic) should not depend on low-level modules (e.g., data access), but both should depend on abstractions (e.g., interfaces).
+
 Dependency injection provides several benefits:
 
 Decoupling: By injecting dependencies, classes become less dependent on the specific implementation details of their dependencies. This leads to more modular and loosely coupled code.
