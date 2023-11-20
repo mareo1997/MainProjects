@@ -21,3 +21,13 @@ Interface Segregation Principle (ISP):
 
 A client should not be forced to depend on interfaces it does not use.
 This principle suggests that a class should not be forced to implement interfaces it does not use. Instead of having a large, monolithic interface, it's better to have smaller, more specific interfaces tailored to the needs of the implementing classes.
+
+Dependency injection provides several benefits:
+
+Decoupling: By injecting dependencies, classes become less dependent on the specific implementation details of their dependencies. This leads to more modular and loosely coupled code.
+
+Testability: Injecting dependencies makes it easier to replace real dependencies with mock objects or test doubles during unit testing, allowing for more effective and isolated testing.
+
+Flexibility: With dependency injection, it becomes easier to change or extend the behavior of a class by providing different implementations of its dependencies.
+
+Reusability: Classes become more reusable since they are not tied to the concrete implementations of their dependencies. This makes it easier to use the same class in different contexts.
