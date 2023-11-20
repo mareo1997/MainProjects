@@ -67,13 +67,14 @@ public class Main {
                     marks.add(in.nextInt());
                     marks.add(in.nextInt());
                     marks.add(in.nextInt());
-                    in.nextLine();  // Consume newline left-over
 
                     ReportCard reportCard = new ReportCard(result.get(0), marks);
 
                     System.out.println(reportCard);
+                    Thread.sleep(4000);
                 } else {
                     System.out.println("Could not find this id please try again");
+                    System.out.println();
                 }
 
                 System.out.println("Is this the last student.\nType Yes to exit");
@@ -84,12 +85,10 @@ public class Main {
                 }
 
             } catch (NullPointerException | InputMismatchException e) {
+                in.nextLine();  // Consume newline left-over
                 System.out.println("The information you entered is not correct please try again.");
                 System.out.println();
             }
-
-
         }
-
     }
 }
