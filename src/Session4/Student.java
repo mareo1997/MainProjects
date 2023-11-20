@@ -30,10 +30,10 @@ public class Student {
                 "Student ID\t" + getId() + "\n" +
                 "Class\t\t" + getClassNumber() + "\n" +
                 "Subject\t\tMarks\n" +
-                "Math\t\t" + getMarks().get(0) + "\n" +
-                "Science\t\t" + getMarks().get(1) + "\n" +
-                "English\t\t" + getMarks().get(2) + "\n" +
-                "Computer\t" + getMarks().get(3) + "\n" +
+                "Math\t\t" + getMarks().get(0) + "%\n" +
+                "Science\t\t" + getMarks().get(1) + "%\n" +
+                "English\t\t" + getMarks().get(2) + "%\n" +
+                "Computer\t" + getMarks().get(3) + "%\n" +
                 "Science\n" +
         "**************************************\n" +
                 "\t\t\tTotal = "+total + "\n" +

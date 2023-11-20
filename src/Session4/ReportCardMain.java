@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class ReportCardMain {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("Enter student name");
                 String name = in.nextLine();
                 if(name.equalsIgnoreCase("0")){
-                    stop = true;
+                    break;
                 }
 
                 System.out.println("Enter student id");
