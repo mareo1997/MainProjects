@@ -5,7 +5,7 @@ Build an interactive financial dashboard that provides an overview of various ba
 
 Summary Section:
 Display the total assets, liabilities, and net worth.X
-Use visual elements such as charts or graphs to represent the distribution of assets and liabilities.
+Use visual elements such as charts or graphs to represent the distribution of assets and liabilities.X
 
 Transaction History:
 Show a table with the latest transactions, including details such as date, type (debit or credit), amount, and description.X
@@ -13,7 +13,7 @@ Implement pagination or infinite scroll for a large transaction history.
 
 Loan Overview:
 Display information about loans, including outstanding balance, interest rate, and payment due dates.X
-Allow the user to interactively explore the details of each loan.
+Allow the user to interactively explore the details of each loan.X
 
 Budgeting Section:
 Create a budget tracker that allows the user to set budget goals for different expense categories.

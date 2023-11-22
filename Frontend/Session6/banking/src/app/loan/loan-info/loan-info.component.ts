@@ -17,7 +17,11 @@ export class LoanInfoComponent {
   totalInterest: number = 0;
   totalLoan: number = 0;
   monthly: number = 0;
-  loanDetailsList: any;
+  loanDetailsList: Array<{
+    month: number;
+    accumulated: number;
+    loanAmount: number;
+  }> = [];
 
   constructor(private loanInfo: LoanService) {
     this.loan = this.loanInfo.loan;
@@ -27,7 +31,7 @@ export class LoanInfoComponent {
 
   calculateLoan(loan: any) {
     let loanAmount = this.loan.loanAmount
-    let rate = this.loan.rate
+    let rate = this.loan.rate/100
     this.monthly = loanAmount * (rate / 12);
     let accumulated = 0
     let balance = 0;
@@ -45,7 +49,7 @@ export class LoanInfoComponent {
         loanAmount = 0;
       }
 
-      let loanDetails = {
+      const loanDetails = {
         month: month,
         accumulated: accumulated,
         loanAmount: loanAmount,

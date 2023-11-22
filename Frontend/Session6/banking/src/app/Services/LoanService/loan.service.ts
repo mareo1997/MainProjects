@@ -18,36 +18,36 @@ export class LoanService {
     let loans =
       [{
         type: "Toyota Car Loan",
-        purchasePrice: 45000,
-        loanAmount: 50000,
-        collateral: 30000,
-        oustanding: 4500,
+        purchasePrice: 27000,
+        loanAmount: 20000,
+        collateral: 10000,
+        oustanding: 19125,
         rate: 2.5,
         repayment: 9,
         dueDate: "07/01/2018",
-        payment: 4500 * (2.5 / 12)
+        payment: 20000 * (0.025 / 12)
       },
       {
         type: "802 Northward Mortgage",
-        purchasePrice: 45000,
-        loanAmount: 50000,
+        purchasePrice: 150000,
+        loanAmount: 150000,
         collateral: 30000,
         oustanding: 15000,
         rate: 10,
         repayment: 10,
         dueDate: "07/01/2018",
-        payment: 15000 * (10 / 12)
+        payment: 150000 * (.1 / 12)
       },
       {
         type: "Florida International University Student Loan",
-        purchasePrice: 45000,
-        loanAmount: 50000,
-        collateral: 30000,
+        purchasePrice: 6500,
+        loanAmount: 6000,
+        collateral: 0,
         oustanding: 1000,
         rate: 1,
         repayment: 19,
         dueDate: "07/01/2018",
-        payment: 1000 * (1 / 12)
+        payment: 6000 * (.01 / 12)
       },]
     // ];
     return loans

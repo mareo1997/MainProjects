@@ -50,7 +50,7 @@
             <table id="customers">
                 <thead>
                     <tr>
-                        <th>Month</th>          
+                        <th>Month</th>
                         <th>Payment</th>
                         <th>Accumulated Payment</th>
                         <th>Balance</th>
@@ -59,15 +59,12 @@
                 <tbody>
                     <tr *ngFor="let l of loanDetailsList">
                         <td>{{l.month}}</td>
-                        <td>${{monthly}}</td>
-                        <td>${{l.accumulated}}</td>
-                        <td>${{l.loanAmount}}</td>
+                        <td>${{monthly | number:'1.2-2'}}</td>
+                        <td>${{l.accumulated | number:'1.2-2'}}</td>
+                        <td>${{l.loanAmount | number:'1.2-2'}}</td>
                     </tr>
                 </tbody>
             </table>
-
         </div>
-
-        <p>Description of the loan</p>
     </div>
 </div>

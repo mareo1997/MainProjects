@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
@@ -14,6 +14,7 @@ import { LoanComponent } from "./loan/loan.component";
 import { LoanInfoComponent } from "./loan/loan-info/loan-info.component";
 import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "./app-routing.module";
+import { BankingModule } from "./banking/banking.module";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -35,11 +36,11 @@ import { AppRoutingModule } from "./app-routing.module";
         IgxItemLegendModule,
         IgxPieChartModule,
         RouterModule,
-        AppRoutingModule
-        
+        AppRoutingModule,
+        BankingModule
     ],
     providers: [], 
     //   entryComponents: [],
-    schemas: []
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

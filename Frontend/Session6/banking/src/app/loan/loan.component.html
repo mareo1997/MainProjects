@@ -1,22 +1,27 @@
-<h>Specfic Loan Name</h>
-
-<table>
-    <thead>
+<div class="form-group">
+    <h1>Loan Overview</h1>
+    <table id="customers">
+      <thead>
         <tr>
-            <th>Name</th>
-            <th>Description</th>
+          <th>Type</th>
+          <th>Outstanding Amount</th>
+          <th>Rate</th>
+          <th>Due Date</th>
+          <th>Next Payment</th>
+          <th>Explore</th>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>A</th>
-            <th>B</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let l of loans">
+          <td>{{l.type}}</td>
+          <td>${{l.oustanding}}</td>
+          <td>{{l.rate}}</td>
+          <td>{{l.dueDate}}</td>
+          <td>${{l.payment | number:'1.2-2'}}</td>
+          <!-- <td><button type="button" class="btn btn-info" routerLink="/Loan/loan-info" (click)="loanInfo(l)">Info</button> </td> -->
+          <td><a (click)="loanInfo(l)" class="btn btn-info" role="button">Info</a></td>
+          <!-- <td><a routerLink="/loan/loan-info" class="btn btn-info">Info</a></td> -->
         </tr>
-        <tr>
-            <th>A</th>
-            <th>B</th>
-        </tr>
-    </tbody>
-</table>
-
-<p>Description of the loan</p>
+      </tbody>
+    </table>
+  </div>
