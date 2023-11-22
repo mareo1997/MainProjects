@@ -5,15 +5,21 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";
 import { TransactionsComponent } from "./transactions/transactions.component";
-
-// import { IgxItemLegendModule, IgxPieChartModule } from 'igniteui-angular-charts';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NgChartsModule } from "ng2-charts";
+import { HttpClientModule } from "@angular/common/http";
+import { IgxItemLegendModule, IgxPieChartModule } from "igniteui-angular-charts";
+import { RouterModule, RouterLink } from '@angular/router';
+import { LoanComponent } from "./loan/loan.component";
+import { LoanInfoComponent } from "./loan/loan-info/loan-info.component";
 
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        TransactionsComponent
+        TransactionsComponent,
+        LoanComponent,
+        LoanInfoComponent
     ],
     imports: [
         BrowserModule,
@@ -21,11 +27,13 @@ import { NgChartsModule } from "ng2-charts";
         CommonModule,
         FormsModule,
         NgChartsModule,
-        
-        // IgxItemLegendModule,
-        // IgxPieChartModule
+        NgxPaginationModule,
+        HttpClientModule, 
+        IgxItemLegendModule,
+        IgxPieChartModule,
+        RouterModule
     ],
-    providers: [],
+    providers: [], 
     //   entryComponents: [],
     schemas: []
 })
