@@ -1,20 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
-import { TransactionService } from './Services/TransactionService/transaction.service';
-import { NetworthService } from './Services/NetworthService/networth.service';
-import { LoanService } from './Services/LoanService/loan.service';
-import { IgxItemLegendComponent, IgxPieChartComponent } from 'igniteui-angular-charts';
-import { EnergyGlobalDemand } from './Class/energy-global-demand';
+import { Router } from '@angular/router';
+import { LoanService } from '../Services/LoanService/loan.service';
+import { NetworthService } from '../Services/NetworthService/networth.service';
+import { TransactionService } from '../Services/TransactionService/transaction.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-export class AppComponent {
+export class HomeComponent {
+
   title = 'Financial Dashboard';
   assets: number = 0;
   liabilities: number = 0;
@@ -60,20 +59,4 @@ export class AppComponent {
     // this.transactions
   }
   //Alt+Shift+F
-
-  @ViewChild("legend", { static: true } )
-  private legend: IgxItemLegendComponent | undefined
-  @ViewChild("chart", { static: true } )
-  private chart: IgxPieChartComponent | undefined
-
-  private _energyGlobalDemand: EnergyGlobalDemand | undefined;
-  public get energyGlobalDemand(): EnergyGlobalDemand {
-      if (this._energyGlobalDemand == null)
-      {
-          this._energyGlobalDemand = new EnergyGlobalDemand();
-      }
-      return this._energyGlobalDemand;
-  }
-
-
 }

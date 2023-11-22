@@ -12,11 +12,13 @@ import { IgxItemLegendModule, IgxPieChartModule } from "igniteui-angular-charts"
 import { RouterModule, RouterLink } from '@angular/router';
 import { LoanComponent } from "./loan/loan.component";
 import { LoanInfoComponent } from "./loan/loan-info/loan-info.component";
+import { HomeComponent } from "./home/home.component";
 
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
+        HomeComponent,
         TransactionsComponent,
         LoanComponent,
         LoanInfoComponent
