@@ -1,1 +1,73 @@
-<p>loan-info works!</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+
+        <h1>{{loan.type}}</h1>
+        <br>
+        <div class="form-group">
+            <table id="customers">
+                <tbody>
+                    <tr>
+                        <td>Purchase Price</td>
+                        <td>${{loan.purchasePrice}}</td>
+                    </tr>
+                    <tr>
+                        <td>Collateral</td>
+                        <td>${{loan.collateral}}</td>
+                    </tr>
+                    <tr>
+                        <td>Interest Rate</td>
+                        <td>{{loan.rate}}%</td>
+                    </tr>
+                    <tr>
+                        <td>Repayment Period</td>
+                        <td>{{loan.repayment}} years</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table id="customers">
+                <tbody>
+                    <tr>
+                        <td>Loan amount</td>
+                        <td>${{loan.loanAmount}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Interest</td>
+                        <td>${{totalInterest}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Loan Repayment</td>
+                        <td>${{totalLoan}}</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Repayment</td>
+                        <td>${{monthly | number:'1.2-2'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h2>Table of Repayment</h2>
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th>Month</th>          
+                        <th>Payment</th>
+                        <th>Accumulated Payment</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let l of loanDetailsList">
+                        <td>{{l.month}}</td>
+                        <td>${{monthly}}</td>
+                        <td>${{l.accumulated}}</td>
+                        <td>${{l.loanAmount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <p>Description of the loan</p>
+    </div>
+</div>

@@ -22,34 +22,34 @@ export class AppComponent {
   p: number = 1
   count: number = 0
 
-  transactions: Array<{
-    date: string;
-    type: string;
-    amount: number;
-    description: string;
-  }>//,
-  // ];
-  loans: Array<{
-    type: string;
-    oustanding: number,
-    rate: number,
-    dueDate: string,
-    payment: number,
-  }>
+  // transactions: Array<{
+  //   date: string;
+  //   type: string;
+  //   amount: number;
+  //   description: string;
+  // }>//,
+  // // ];
+  // loans: Array<{
+  //   type: string;
+  //   oustanding: number,
+  //   rate: number,
+  //   dueDate: string,
+  //   payment: number,
+  // }>
 
-  constructor(transactionservice: TransactionService, networthService: NetworthService, loanService: LoanService, private router: Router) {
-    this.transactions = transactionservice.getTransactions()
-    this.assets = networthService.assets;
-    this.liabilities = networthService.liabilities;
-    this.networth = this.assets - this.liabilities;
-    this.loans = loanService.getLoans()
-  }
+  // constructor(transactionservice: TransactionService, networthService: NetworthService, loanService: LoanService, private router: Router) {
+  //   this.transactions = transactionservice.getTransactions()
+  //   this.assets = networthService.assets;
+  //   this.liabilities = networthService.liabilities;
+  //   this.networth = this.assets - this.liabilities;
+  //   // this.loans = loanService.getLoans()
+  // }
 
-  loanInfo(loan: any){
-    console.log(loan)
-    // routerLink="/trainer/registration"
-    this.router.navigate(["/loan/loan-info"])
-  }
+  // loanInfo(loan: any){
+  //   console.log(loan)
+  //   // routerLink="/trainer/registration"
+  //   this.router.navigate(["/loan/loan-info"])
+  // }
 
   ngOnInit() {
   }

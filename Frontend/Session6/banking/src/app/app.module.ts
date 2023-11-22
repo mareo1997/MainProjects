@@ -13,6 +13,7 @@ import { RouterModule, RouterLink } from '@angular/router';
 import { LoanComponent } from "./loan/loan.component";
 import { LoanInfoComponent } from "./loan/loan-info/loan-info.component";
 import { HomeComponent } from "./home/home.component";
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -33,7 +34,9 @@ import { HomeComponent } from "./home/home.component";
         HttpClientModule, 
         IgxItemLegendModule,
         IgxPieChartModule,
-        RouterModule
+        RouterModule,
+        AppRoutingModule
+        
     ],
     providers: [], 
     //   entryComponents: [],

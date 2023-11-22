@@ -26,8 +26,8 @@ export class HomeComponent {
     type: string;
     amount: number;
     description: string;
-  }>//,
-  // ];
+  }>
+
   loans: Array<{
     type: string;
     oustanding: number,
@@ -36,24 +36,28 @@ export class HomeComponent {
     payment: number,
   }>
 
+  loans2: LoanService;
+
   constructor(transactionservice: TransactionService, networthService: NetworthService, loanService: LoanService, private router: Router) {
     this.transactions = transactionservice.getTransactions()
     this.assets = networthService.assets;
     this.liabilities = networthService.liabilities;
     this.networth = this.assets - this.liabilities;
-    this.loans = loanService.getLoans()
+    this.loans = loanService.getLoansList()
+    this.loans2 = loanService
   }
 
-  loanInfo(loan: any){
-    console.log(loan)
+  loanInfo(loan: any) {
+    // console.log(loan)
     // routerLink="/trainer/registration"
+    this.loans2.getLoans(loan);
     this.router.navigate(["/loan/loan-info"])
   }
 
   ngOnInit() {
   }
 
-  onTableDataChange(event:any): void{
+  onTableDataChange(event: any): void {
     // this.tableSize = event.target.value;
     this.p = 1
     // this.transactions
