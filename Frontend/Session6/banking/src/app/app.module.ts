@@ -15,6 +15,7 @@ import { LoanInfoComponent } from "./loan/loan-info/loan-info.component";
 import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { BankingModule } from "./banking/banking.module";
+import { PaginationComponent } from "./pagination/pagination.component";
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -23,7 +24,8 @@ import { BankingModule } from "./banking/banking.module";
         HomeComponent,
         TransactionsComponent,
         LoanComponent,
-        LoanInfoComponent
+        LoanInfoComponent,
+        PaginationComponent
     ],
     imports: [
         BrowserModule,

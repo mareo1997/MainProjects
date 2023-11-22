@@ -15,9 +15,9 @@
           <th>Total Net Worth</th>
         </thead>
         <tbody>
-          <td>{{assets}}</td>
-          <td>{{liabilities}}</td>
-          <td>{{networth}}</td>
+          <td>${{networth.assets | number:'1.2-2'}}</td>
+          <td>${{networth.liabilities | number:'1.2-2'}}</td>
+          <td>${{networth.assets - networth.liabilities | number:'1.2-2'}}</td>
         </tbody>
       </table>
       <div>
@@ -25,6 +25,7 @@
       </div>
     </div>
     <br>
+
     <div class="form-group">
       <h1>Transaction History</h1>
       <table id="customers">
@@ -41,11 +42,14 @@
             <!-- <tr *ngFor="let t of transactions | paginate: { itemsPerPage: 1, currentPage: p, totalItems: count}; let i = index"> -->
             <td>{{t.date}}</td>
             <td>{{t.type}}</td>
-            <td>${{t.amount}}</td>
+            <td>${{t.amount | number:'1.2-2'}}</td>
             <td>{{t.description}}</td>
           </tr>
         </tbody>
       </table>
+      <!-- <app-pagination></app-pagination> -->
+      <!-- <mat-paginator [length]="100" [pageSize]="10"></mat-paginator>      -->
+      <!-- <div pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage"></div> -->
     </div>
     <!-- <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"></pagination-controls> -->
     <br>
@@ -64,10 +68,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let l of loans">
+          <tr *ngFor="let l of loanlist">
             <td>{{l.type}}</td>
-            <td>${{l.oustanding}}</td>
-            <td>{{l.rate}}</td>
+            <td>${{l.oustanding | number:'1.2-2'}}</td>
+            <td>{{l.rate}}%</td>
             <td>{{l.dueDate}}</td>
             <td>${{l.payment | number:'1.2-2'}}</td>
             <!-- <td><button type="button" class="btn btn-info" routerLink="/Loan/loan-info" (click)="loanInfo(l)">Info</button> </td> -->
@@ -77,12 +81,17 @@
         </tbody>
       </table>
     </div>
+    <br>
     <!-- <app-loan></app-loan> -->
     <div class="form-group">
       <h1>Budgeting Section</h1>
     </div>
+    <br>
+
     <div class="form-group">
       <h1>Account Alerts</h1>
     </div>
+    <br>
+
   </div>
 </div>
