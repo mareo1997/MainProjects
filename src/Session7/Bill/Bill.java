@@ -1,4 +1,6 @@
-package Session7;
+package Session7.Bill;
+
+import Session7.Menu;
 
 import java.util.Map;
 

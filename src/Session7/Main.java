@@ -1,5 +1,8 @@
 package Session7;
 
+import Session7.Bill.BillImpl;
+import Session7.GiftCard.GiftCardCardImpl;
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
@@ -8,7 +11,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the Gift Shop");
+        System.out.println("Welcome to the GiftCard Shop");
 
         Map<String, Integer> map = new HashMap<>();
         String response;
@@ -82,8 +85,8 @@ public class Main {
         System.out.println("Your bill comes out to $" + total);
         System.out.println();
 
-        GiftCard giftcard = new GiftCard(customer, total);
+        GiftCardCardImpl giftcard = new GiftCardCardImpl(customer, total);
 
-        giftcard.isRegular(customer, total);
+        total = giftcard.isRegular(customer, total);
     }
 }

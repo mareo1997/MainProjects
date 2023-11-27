@@ -1,14 +1,16 @@
-package Session7;
+package Session7.GiftCard;
+
+import Session7.Customer;
 
 import java.util.Scanner;
 
-public class GiftCard implements Gift {
+public class GiftCardCardImpl implements GiftCard {
 
     private double total;
     private Customer customer;
     private final Scanner in = new Scanner(System.in);
 
-    public GiftCard(Customer customer, double total) {
+    public GiftCardCardImpl(Customer customer, double total) {
         this.customer = customer;
         this.total = total;
     }
