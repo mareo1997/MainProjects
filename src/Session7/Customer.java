@@ -10,12 +10,6 @@ public class Customer {
 
     private double giftBal;
 
-    public Customer(String customerName, String customerType, double giftBal) {
-        this.customerName = customerName;
-        this.customerType = customerType;
-        this.giftBal = giftBal;
-    }
-
     public Customer(String customerName, String phoneNumber, String customerType, double giftBal) {
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;

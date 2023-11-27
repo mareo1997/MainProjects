@@ -37,7 +37,6 @@ public class GiftCardCardImpl implements GiftCard {
                     total = 0;
                 }
 
-                System.out.println("Your new total comes out to $" + total);
                 return total;
 
             } else {

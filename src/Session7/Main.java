@@ -85,8 +85,13 @@ public class Main {
         System.out.println("Your bill comes out to $" + total);
         System.out.println();
 
-        GiftCardCardImpl giftcard = new GiftCardCardImpl(customer, total);
+        GiftCardCardImpl giftCard = new GiftCardCardImpl(customer, total);
 
-        total = giftcard.isRegular(customer, total);
+        total = giftCard.isRegular(customer, total);
+
+//        PrintOrder printOrder = new PrintOrder(customer, map, total);
+
+        System.out.println("Your new total comes out to $" + total);
+
     }
 }
