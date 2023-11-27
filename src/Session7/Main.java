@@ -66,7 +66,7 @@ public class Main {
             }
             System.out.println();
 
-            System.out.println("Are you satisfied with your menu?");
+            System.out.println("Are you satisfied with your order?");
             response = in.nextLine();
             if (response.equalsIgnoreCase("yes")) {
                 break;
@@ -78,6 +78,10 @@ public class Main {
         double total = bill.calculateBill(bill.getMenu(), bill.getMap());
 
         System.out.println("Your bill comes out to $"+total);
+        System.out.println();
 
+        GiftCard giftcard = new GiftCard(customer, total);
+
+        giftcard.isRegular(customer, total);
     }
 }

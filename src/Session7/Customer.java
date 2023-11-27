@@ -8,15 +8,15 @@ public class Customer {
 
     private String customerType;
 
-    private int giftBal;
+    private double giftBal;
 
-    public Customer(String customerName, String customerType, int giftBal) {
+    public Customer(String customerName, String customerType, double giftBal) {
         this.customerName = customerName;
         this.customerType = customerType;
         this.giftBal = giftBal;
     }
 
-    public Customer(String customerName, String phoneNumber, String customerType, int giftBal) {
+    public Customer(String customerName, String phoneNumber, String customerType, double giftBal) {
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;
         this.customerType = customerType;
@@ -47,11 +47,11 @@ public class Customer {
         this.customerType = customerType;
     }
 
-    public int getGiftBal() {
+    public double getGiftBal() {
         return giftBal;
     }
 
-    public void setGiftBal(int giftBal) {
+    public void setGiftBal(double giftBal) {
         this.giftBal = giftBal;
     }
 }
