@@ -75,5 +75,9 @@ public class Main {
 
         BillImpl bill = new BillImpl(customer, menu, map);
 
+        double total = bill.calculateBill(bill.getMenu(), bill.getMap());
+
+        System.out.println("Your bill comes out to $"+total);
+
     }
 }

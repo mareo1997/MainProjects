@@ -18,4 +18,16 @@ public class Menu {
 
         return result;
     }
+
+    public double getFlowerAmount() {
+        return flowerAmount;
+    }
+
+    public double getGreetingAmount() {
+        return greetingAmount;
+    }
+
+    public double getPhotoFrameAmount() {
+        return photoFrameAmount;
+    }
 }
