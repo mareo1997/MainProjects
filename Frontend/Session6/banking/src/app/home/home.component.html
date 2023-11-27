@@ -21,7 +21,7 @@
         </tbody>
       </table>
       <div>
-        <canvas id="myChart"></canvas>
+        <canvas id="networthChart"></canvas>
       </div>
     </div>
     <br>
@@ -85,6 +85,54 @@
     <!-- <app-loan></app-loan> -->
     <div class="form-group">
       <h1>Budgeting Section</h1>
+      <table id="customers">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let l of budget">
+            <td>{{l.type}}</td>
+            <td>{{l.category}}</td>
+            <td>${{l.amount | number:'1.2-2'}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <button (click)="openBudget()" class="btn btn-info">Create Budget</button>
+      <br>
+      <br>
+      <form name="signupForm" *ngIf="open">
+        <div class="form-group">
+          <label>Type</label><br>
+          <label>
+            <input type="radio" name="color" (change)="selectType = 'Want'"> Want
+          </label><br>
+          <label>
+            <input type="radio" name="color" (change)="selectType = 'Need'"> Need
+          </label>
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Category</label><input type="text" class="form-control" [value]="category" (change)="changeCategory($event)">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Amount</label><input type="number" class="form-control" [value]="amount" (change)="changeAmount($event)">
+        </div>
+        <br>
+        <a (click)="createBudget()" class="btn btn-info" role="button">Add to Budget</a>
+        <br>
+        <br>
+        <a (click)="closeBudget()" class="btn btn-info" role="button">Close Form</a>
+      </form>
+      <div>
+        <canvas id="budgetChart"></canvas>
+      </div>
+
     </div>
     <br>
 

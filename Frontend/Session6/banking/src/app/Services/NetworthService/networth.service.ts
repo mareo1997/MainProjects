@@ -12,7 +12,7 @@ export class NetworthService {
   liabilities: number = 5200;
 
   // graph(){
-  //   var myChart = new Chart('myChart', {
+  //   var networthChart = new Chart('networthChart', {
   //     type: 'bar',
   //     data: {
   //         labels: ['Rent', 'Water', 'Electricity', 'Food and Groceries', 'Debt', 'Deposits'],
@@ -46,7 +46,7 @@ export class NetworthService {
   //         }
   //     }
   // });
-  // return myChart
+  // return networthChart
   // }
 
 }

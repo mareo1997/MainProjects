@@ -17,7 +17,7 @@ Allow the user to interactively explore the details of each loan.X
 
 Budgeting Section:
 Create a budget tracker that allows the user to set budget goals for different expense categories.
-Visualize the budget progress using charts or graphs.
+Visualize the budget progress using charts or graphs.X
 
 Account Alerts:
 Implement a notification system for account alerts such as low balance, upcoming payments, or unusual activities.

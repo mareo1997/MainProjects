@@ -6,11 +6,13 @@ import { NetworthService } from '../Services/NetworthService/networth.service';
 import { TransactionService } from '../Services/TransactionService/transaction.service';
 import { OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { BudgetService } from '../Services/BudgetService/budget.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,6 +21,7 @@ export class HomeComponent implements OnInit {
   title = 'Financial Dashboard';
   currentPage: number = 1
   itemsPerPage: number = 5
+  selectType: string = "Empty";
 
   transactions: Array<{
     date: string;
@@ -28,14 +31,24 @@ export class HomeComponent implements OnInit {
   }> = [];
 
   loanlist: { type: string; purchasePrice: number; loanAmount: number; collateral: number; oustanding: number; rate: number; repayment: number; dueDate: string; payment: number; }[] = [];
-  networth: NetworthService = new NetworthService;
   totalItems: number = 0;
   currentItemsToShow: any;
-  items: any;
-  data = [{
-  }];
 
-  constructor(private transactionservice: TransactionService, private networthService: NetworthService, private loanService: LoanService, private router: Router) {
+  budget: { type: string; category: string; amount: number; }[] = [];
+  items: any;
+  networth: NetworthService = new NetworthService;
+  categoryList: string[] = [];
+  amountList: number[] = [];
+  selectedValue: any;
+  description: any;
+  selectedDescription: string = '';
+  selectedAmount: number = 0;
+  newBudget: any;
+  amount: any;
+  category: string = '';
+  open: boolean = false;
+
+  constructor(private transactionservice: TransactionService, private networthService: NetworthService, private loanService: LoanService, private router: Router, private budgetService: BudgetService) {
   }
 
   ngOnInit() {
@@ -44,9 +57,119 @@ export class HomeComponent implements OnInit {
     this.currentPage = 1
     this.networth = this.networthService
     this.loanlist = this.loanService.getLoansList()
-    // var myChart = this.graph.graph
-    var myChart = new Chart('myChart', {
-      type: 'bar',
+
+    this.initalizeBudget()
+
+    this.initalizeChart()
+
+  }
+
+  loanInfo(loan: any) {
+    this.loanService.getLoans(loan);
+    this.router.navigate(["/loan/loan-info"])
+  }
+
+  changeCategory(e: any) {
+    this.category = e.target.value;
+    console.log(this.category)
+  }
+
+  changeAmount(e: any) {
+    this.amount = e.target.value;
+    console.log(this.amount)
+  }
+
+  openBudget(){
+    this.open = true;
+  }
+
+  closeBudget(){
+    this.open = false;
+  }
+
+  createBudget() {
+
+    // console.log(this.selectedDescription)
+    // console.log(this.selectedAmount)
+    // console.log(this.newBudget)
+
+    let budget = {
+      type: this.selectType,
+      category: this.category,
+      amount: this.amount
+    }
+
+    console.log(budget)
+
+    this.budgetService.setBudget(budget)
+
+    this.initalizeBudget()
+
+    this.open = false;
+  }
+
+  initalizeBudget() {
+    this.budget = this.budgetService.getBudget()
+
+    console.log(this.budget)
+
+    this.budget.forEach(b => {
+      this.categoryList.push(b.category);
+      this.amountList.push(b.amount);
+    });
+
+    let budgetChart = new Chart('budgetChart', {
+      type: 'pie',
+      data: {
+        labels: this.categoryList,
+        datasets: [{
+          label: '$',
+          data: this.amountList,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
+
+  
+  initalizeChart(){
+    var networthChart = new Chart('networthChart', {
+      type: 'pie',
       data: {
         labels: ['Rent', 'Water', 'Electricity', 'Food and Groceries', 'Debt', 'Deposits'],
         datasets: [{
@@ -81,32 +204,24 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  loanInfo(loan: any) {
-    // console.log(loan)
-    // routerLink="/trainer/registration"
-    // this.loans2.getLoans(loan);
-    this.loanService.getLoans(loan);
-    this.router.navigate(["/loan/loan-info"])
-  }
-
   onTableDataChange(event: any): void {
     // this.tableSize = event.target.value;
     this.currentPage = 1
     // this.transactions
   }
-  
+
   onPageChange($event: { pageIndex: number; pageSize: number; }) {
-    this.currentItemsToShow =  this.items.slice($event.pageIndex*$event.pageSize,
-    $event.pageIndex*$event.pageSize + $event.pageSize);
+    this.currentItemsToShow = this.items.slice($event.pageIndex * $event.pageSize,
+      $event.pageIndex * $event.pageSize + $event.pageSize);
   }
 
-  getPaginatedData(){
-    const start = 1//
-    const end = start + this.itemsPerPage
-    return this.data.slice(start,end)
-  }
+  // getPaginatedData(){
+  //   const start = 1//
+  //   const end = start + this.itemsPerPage
+  //   return this.data.slice(start,end)
+  // }
 
-  changePage(page: number){
+  changePage(page: number) {
     this.currentPage = page
   }
   //Alt+Shift+F
