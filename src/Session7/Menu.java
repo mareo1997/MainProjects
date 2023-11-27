@@ -9,14 +9,11 @@ public class Menu {
     @Override
     public String toString() {
 
-        String result = "Item Name\tPrice\n"
-                +"Flowers\t\t$"+flowerAmount+"\n"
-                +"Photo Frame\t$"+photoFrameAmount+"\n"
-                +"Greeting\t$"+greetingAmount+"\n"
-                +"Card"
-                ;
-
-        return result;
+        return "Item Name\tPrice\n"
+                + "Flowers\t\t$" + flowerAmount + "\n"
+                + "Photo Frame\t$" + photoFrameAmount + "\n"
+                + "Greeting\t$" + greetingAmount + "\n"
+                + "Card";
     }
 
     public double getFlowerAmount() {

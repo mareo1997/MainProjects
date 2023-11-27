@@ -11,8 +11,8 @@ public class Main {
         System.out.println("Welcome to the Gift Shop");
 
         Map<String, Integer> map = new HashMap<>();
-        String response = null;
-        int quantity = 0;
+        String response;
+        int quantity;
         Scanner in = new Scanner(System.in);
 
         Customer customer = new Customer("Mareo", "9543052814", "Regular", 250);
@@ -22,7 +22,9 @@ public class Main {
         System.out.println(menu);
         System.out.println();
 
-        while (true) {
+        boolean stop = false;
+
+        while (!stop) {
             try {
                 System.out.println("Would you like flowers?");
                 response = in.nextLine();
@@ -69,7 +71,7 @@ public class Main {
             System.out.println("Are you satisfied with your order?");
             response = in.nextLine();
             if (response.equalsIgnoreCase("yes")) {
-                break;
+                stop = true;
             }
         }
 
@@ -77,7 +79,7 @@ public class Main {
 
         double total = bill.calculateBill(bill.getMenu(), bill.getMap());
 
-        System.out.println("Your bill comes out to $"+total);
+        System.out.println("Your bill comes out to $" + total);
         System.out.println();
 
         GiftCard giftcard = new GiftCard(customer, total);

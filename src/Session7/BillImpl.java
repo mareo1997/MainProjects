@@ -19,13 +19,13 @@ public class BillImpl implements Bill {
         double total = 0;
         for (Map.Entry<String, Integer> me : map.entrySet()) {
 //            System.out.println(me.getValue() + " " + me.getKey());
-            if(me.getKey().equalsIgnoreCase("Flower(s)")){
+            if (me.getKey().equalsIgnoreCase("Flower(s)")) {
                 total += me.getValue() * menu.getFlowerAmount();
             }
-            if(me.getKey().equalsIgnoreCase("Greetings Card(s)")){
+            if (me.getKey().equalsIgnoreCase("Greetings Card(s)")) {
                 total += me.getValue() * menu.getGreetingAmount();
             }
-            if(me.getKey().equalsIgnoreCase("Photo Frame(s)")){
+            if (me.getKey().equalsIgnoreCase("Photo Frame(s)")) {
                 total += me.getValue() * menu.getPhotoFrameAmount();
             }
         }
