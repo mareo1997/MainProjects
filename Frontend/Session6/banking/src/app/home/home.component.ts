@@ -79,20 +79,15 @@ export class HomeComponent implements OnInit {
     console.log(this.amount)
   }
 
-  openBudget(){
+  openBudget() {
     this.open = true;
   }
 
-  closeBudget(){
+  closeBudget() {
     this.open = false;
   }
 
   createBudget() {
-
-    // console.log(this.selectedDescription)
-    // console.log(this.selectedAmount)
-    // console.log(this.newBudget)
-
     let budget = {
       type: this.selectType,
       category: this.category,
@@ -113,6 +108,9 @@ export class HomeComponent implements OnInit {
 
     console.log(this.budget)
 
+    this.categoryList = []
+    this.amountList = []
+    
     this.budget.forEach(b => {
       this.categoryList.push(b.category);
       this.amountList.push(b.amount);
@@ -166,8 +164,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
-  initalizeChart(){
+
+  initalizeChart() {
     var networthChart = new Chart('networthChart', {
       type: 'pie',
       data: {

@@ -16,7 +16,7 @@ Display information about loans, including outstanding balance, interest rate, a
 Allow the user to interactively explore the details of each loan.X
 
 Budgeting Section:
-Create a budget tracker that allows the user to set budget goals for different expense categories.
+Create a budget tracker that allows the user to set budget goals for different expense categories.X
 Visualize the budget progress using charts or graphs.X
 
 Account Alerts:
