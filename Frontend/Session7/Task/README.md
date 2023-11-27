@@ -1,0 +1,1 @@
+Create a simple web server that handles routing, parses query parameters, and serves static files:
