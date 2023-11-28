@@ -1,9 +1,12 @@
-package Session7;
+package Session7.Print;
+
+import Session7.Customer;
 
 import java.util.Map;
 
-public class PrintBill {
+public class PrintBill implements Print {
 
+    @Override
     public void billWithGiftCard(Customer customer, Map<String, Double> map, double prevTotal, double total) {
 
         for (Map.Entry<String, Double> me : map.entrySet()) {
@@ -15,6 +18,7 @@ public class PrintBill {
 
     }
 
+    @Override
     public void billWithNoGiftCard(Map<String, Double> map, double total) {
         for (Map.Entry<String, Double> me : map.entrySet()) {
             System.out.println(me.getKey() + "\t\t$" + me.getValue());

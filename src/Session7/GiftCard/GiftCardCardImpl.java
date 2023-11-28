@@ -1,7 +1,7 @@
 package Session7.GiftCard;
 
 import Session7.Customer;
-import Session7.PrintBill;
+import Session7.Print.PrintBill;
 
 import java.util.Map;
 import java.util.Scanner;
