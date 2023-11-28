@@ -3,50 +3,22 @@ const url = require('url')
 const fs = require('fs')
 
 http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html' })
+    let img = __dirname + "/account.html"
 
-    // let passedURL = url.parse(req.url, true)
-    // let path = passedURL.req.url.replace("", "");
+    fs.access(img, fs.constants.R_OK, err => {
+        console.log(`${img} ${err ? "does not exist" : "exists"}`)
+    })
 
-    // const params = new URLSearchParams(req.url);
-    // const name = params.get("name");
-    // const value = params.get("value");
-
-    // console.log(name)
-    // console.log(value)
-
-    if (req.url == '/') {
-        res.write('<html><head>')
-        res.write('<style>')
-        res.write('body{background-color:pink;color:blue}')
-        res.write('</style>')
-        res.write('</head><body>')
-        res.write('<h1>Welcome to node server</h1>')
-        res.write('</body><html>')
-        res.end()
-    } else if (req.url == '/admin') {
-        const params = req.url.searchParams;
-
-        // res.write("You are in the admin page")
-        res.write('<html><head>')
-        res.write('<style>')
-        res.write('body{background-color:brown;color:green}')
-        res.write('</style>')
-        res.write('</head><body>')
-        res.write('<h1>Logged into admin page</h1>')
-        // res.write(req.url)
-        res.write('</body><html>')
-        res.end();
-    } else {
-        // app.use(express.static(req.url.join(__dirname, 'public')));
-        res.write('<html><head>')
-        res.write('<style>')
-        res.write('body{background-color:red;color:white}')
-        res.write('</style>')
-        res.write('</head><body>')
-        res.write('<h1>Page not Found. Try again.</h1>')
-        // res.write(req.url)
-        res.write('</body><html>')
-        res.end()
-    }
-}).listen(4040, () => { console.log("Server is listening at 4040") })
+    fs.readFile(img, function (err, content) {
+        if (err) {
+            res.writeHead(404, { 'Content-Type': 'text/html' })
+            res.end("<h1>No such file</h1>")
+        } else {
+            res.writeHead(200, { 'Content-Type': 'text/html' })
+            res.write("You are in the account page")
+            res.end(content)
+        }
+    })
+}).listen(4040, function(){
+    console.log("Server running on port 4040")
+})
