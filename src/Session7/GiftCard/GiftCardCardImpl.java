@@ -8,8 +8,6 @@ import java.util.Scanner;
 
 public class GiftCardCardImpl implements GiftCard {
 
-    private double total;
-    private Customer customer;
     private final Scanner in = new Scanner(System.in);
 
     @Override
@@ -43,22 +41,6 @@ public class GiftCardCardImpl implements GiftCard {
             printBill.billWithNoGiftCard(map, total);
         }
 
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 
 }
