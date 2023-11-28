@@ -1,7 +1,9 @@
 package Session7.GiftCard;
 
 import Session7.Customer;
+import Session7.PrintBill;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class GiftCardCardImpl implements GiftCard {
@@ -16,12 +18,14 @@ public class GiftCardCardImpl implements GiftCard {
     }
 
     @Override
-    public double isRegular(Customer customer, double total) {
+    public double isRegular(Customer customer, Map<String, Double> map, double total) {
+        double prevTotal = 0;
+        PrintBill printBill = new PrintBill(customer, map, prevTotal, total);
         if (customer.getCustomerType().equalsIgnoreCase("Regular")) {
             System.out.println("You are a regular customer do you want to use your gift card?");
 
             if (in.nextLine().equalsIgnoreCase("YES")) {
-                double prevTotal = total;
+                prevTotal = total;
                 total -= customer.getGiftBal();
 
                 double giftBal = customer.getGiftBal() - prevTotal;
@@ -31,18 +35,19 @@ public class GiftCardCardImpl implements GiftCard {
                     customer.setGiftBal(giftBal);
                 }
 
-                System.out.println("Your new balance is $" + customer.getGiftBal());
-
                 if (total < 0) {
                     total = 0;
                 }
 
+                printBill.first(customer, map, prevTotal, total);
                 return total;
 
             } else {
                 System.out.println("No gift card applied to your order.");
             }
         }
+        printBill.second(customer, map, prevTotal, total);
+
         return total;
     }
 

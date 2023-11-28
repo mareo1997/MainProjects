@@ -9,18 +9,18 @@ public class BillImpl implements Bill {
 
     private Customer customer;
     private Menu menu;
-    private Map<String, Integer> map;
+    private Map<String, Double> map;
 
-    public BillImpl(Customer customer, Menu menu, Map<String, Integer> map) {
+    public BillImpl(Customer customer, Menu menu, Map<String, Double> map) {
         this.customer = customer;
         this.menu = menu;
         this.map = map;
     }
 
     @Override
-    public double calculateBill(Menu menu, Map<String, Integer> map) {
+    public double calculateBill(Menu menu, Map<String, Double> map) {
         double total = 0;
-        for (Map.Entry<String, Integer> me : map.entrySet()) {
+        for (Map.Entry<String, Double> me : map.entrySet()) {
 //            System.out.println(me.getValue() + " " + me.getKey());
             if (me.getKey().equalsIgnoreCase("Flower(s)")) {
                 total += me.getValue() * menu.getFlowerAmount();
@@ -52,11 +52,11 @@ public class BillImpl implements Bill {
         this.menu = menu;
     }
 
-    public Map<String, Integer> getMap() {
+    public Map<String, Double> getMap() {
         return map;
     }
 
-    public void setMap(Map<String, Integer> map) {
+    public void setMap(Map<String, Double> map) {
         this.map = map;
     }
 }

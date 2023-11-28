@@ -6,6 +6,6 @@ import java.util.Map;
 
 public interface Bill {
 
-    double calculateBill(Menu menu, Map<String, Integer> map);
+    double calculateBill(Menu menu, Map<String, Double> map);
 
 }
