@@ -1,9 +1,11 @@
-package Session7;
+package Session7.ProcessBill;
+
+import Session7.Menu;
 
 import java.util.Map;
 import java.util.Scanner;
 
-public interface a {
+public interface ProcessBill {
 
     Map<String, Double> Bill(Menu menu, Scanner in);
 

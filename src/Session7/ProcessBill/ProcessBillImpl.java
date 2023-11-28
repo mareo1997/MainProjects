@@ -1,15 +1,17 @@
-package Session7;
+package Session7.ProcessBill;
+
+import Session7.Menu;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ProcessBill implements a {
+public class ProcessBillImpl implements ProcessBill {
 
 
     private Menu menu;
 
-    public ProcessBill(Menu menu) {
+    public ProcessBillImpl(Menu menu) {
         this.menu = menu;
     }
 

@@ -3,20 +3,8 @@ package Session7;
 import java.util.Map;
 
 public class PrintBill {
-    private  Map<String, Double> map;
-    private  double prevTotal;
-    private  double total;
-    private  Customer customer;
 
-    public PrintBill(Customer c,Map<String, Double> map, double prevTotal, double total) {
-        this.customer = c;
-        this.map = map;
-        this.prevTotal = prevTotal;
-        this.total = total;
-    }
-
-
-    public void first(Customer customer, Map<String, Double> map, double prevTotal, double total) {
+    public void billWithGiftCard(Customer customer, Map<String, Double> map, double prevTotal, double total) {
 
         for (Map.Entry<String, Double> me : map.entrySet()) {
             System.out.println(me.getKey() + "\t\t$" + me.getValue());
@@ -27,7 +15,7 @@ public class PrintBill {
 
     }
 
-    public void second(Customer customer, Map<String, Double> map, double prevTotal, double total) {
+    public void billWithNoGiftCard(Map<String, Double> map, double total) {
         for (Map.Entry<String, Double> me : map.entrySet()) {
             System.out.println(me.getKey() + "\t\t$" + me.getValue());
         }

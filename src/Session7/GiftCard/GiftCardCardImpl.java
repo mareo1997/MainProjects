@@ -12,20 +12,14 @@ public class GiftCardCardImpl implements GiftCard {
     private Customer customer;
     private final Scanner in = new Scanner(System.in);
 
-    public GiftCardCardImpl(Customer customer, double total) {
-        this.customer = customer;
-        this.total = total;
-    }
-
     @Override
-    public double isRegular(Customer customer, Map<String, Double> map, double total) {
-        double prevTotal = 0;
-        PrintBill printBill = new PrintBill(customer, map, prevTotal, total);
+    public void isRegular(Customer customer, Map<String, Double> map, double total) {
+        PrintBill printBill = new PrintBill();
         if (customer.getCustomerType().equalsIgnoreCase("Regular")) {
             System.out.println("You are a regular customer do you want to use your gift card?");
 
             if (in.nextLine().equalsIgnoreCase("YES")) {
-                prevTotal = total;
+                double prevTotal = total;
                 total -= customer.getGiftBal();
 
                 double giftBal = customer.getGiftBal() - prevTotal;
@@ -39,16 +33,16 @@ public class GiftCardCardImpl implements GiftCard {
                     total = 0;
                 }
 
-                printBill.first(customer, map, prevTotal, total);
-                return total;
+                printBill.billWithGiftCard(customer, map, prevTotal, total);
 
             } else {
                 System.out.println("No gift card applied to your order.");
+                printBill.billWithNoGiftCard(map, total);
             }
+        } else {
+            printBill.billWithNoGiftCard(map, total);
         }
-        printBill.second(customer, map, prevTotal, total);
 
-        return total;
     }
 
     public double getTotal() {

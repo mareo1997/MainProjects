@@ -1,6 +1,8 @@
 package Session7;
 
 import Session7.GiftCard.GiftCardCardImpl;
+import Session7.ProcessBill.ProcessBillImpl;
+import Session7.ProcessOrder.ProcessOrderImpl;
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -29,40 +31,10 @@ public class Main {
             map = new HashMap<>();
             try {
 
-                ProcessBill processBill = new ProcessBill(menu);
+                ProcessBillImpl processBillImpl = new ProcessBillImpl(menu);
 
-                map = processBill.Bill(menu, in);
+                map = processBillImpl.Bill(menu, in);
 
-//                System.out.println("Would you like flowers?");
-//                response = in.nextLine();
-//                if (response.equalsIgnoreCase("yes")) {
-//                    System.out.println("How many would you like?");
-//                    quantity = in.nextInt();
-//                    in.nextLine();  // Consume newline left-over
-//                    if (quantity > 0) {
-//                        map.put("Flower(s)", quantity * menu.getFlowerAmount());
-//                    }
-//                }
-//                System.out.println("Would you like a greeting card?");
-//                response = in.nextLine();
-//                if (response.equalsIgnoreCase("yes")) {
-//                    System.out.println("How many would you like?");
-//                    quantity = in.nextInt();
-//                    in.nextLine();  // Consume newline left-over
-//                    if (quantity > 0) {
-//                        map.put("Greetings Card(s)", quantity * menu.getGreetingAmount());
-//                    }
-//                }
-//                System.out.println("Would you like a photo frame?");
-//                response = in.nextLine();
-//                if (response.equalsIgnoreCase("yes")) {
-//                    System.out.println("How many would you like?");
-//                    quantity = in.nextInt();
-//                    in.nextLine();  // Consume newline left-over
-//                    if (quantity > 0) {
-//                        map.put("Photo Frame(s)", quantity * menu.getPhotoFrameAmount());
-//                    }
-//                }
             } catch (InputMismatchException e) {
                 System.out.println("The information you entered is not correct please try again.");
                 System.out.println();
@@ -70,18 +42,9 @@ public class Main {
             }
             System.out.println();
 
-            total = 0;
+            ProcessOrderImpl processOrderImpl = new ProcessOrderImpl();
 
-            ProcessOrder processOrder = new ProcessOrder(map);
-
-            total = processOrder.Order(map, in);
-
-//            for (Map.Entry<String, Double> me : map.entrySet()) {
-//                System.out.println(me.getKey() + " \t\t$" + me.getValue());
-//                total += me.getValue();
-//            }
-//            System.out.println("Your bill comes out to $" + total);
-//            System.out.println();
+            total = processOrderImpl.Order(map, in);
 
             System.out.println("Are you satisfied with your order?");
             response = in.nextLine();
@@ -90,20 +53,9 @@ public class Main {
             }
         }
 
-//        BillImpl bill = new BillImpl(customer, menu, map);
+        GiftCardCardImpl giftCard = new GiftCardCardImpl();
 
-//        double total = bill.calculateBill(bill.getMenu(), bill.getMap());
-
-//        System.out.println("Your bill comes out to $" + total);
-//        System.out.println();
-
-        GiftCardCardImpl giftCard = new GiftCardCardImpl(customer, total);
-
-        total = giftCard.isRegular(customer, map, total);
-
-
-
-//        PrintOrder printOrder = new PrintOrder(customer, map, total);
+        giftCard.isRegular(customer, map, total);
 
     }
 }

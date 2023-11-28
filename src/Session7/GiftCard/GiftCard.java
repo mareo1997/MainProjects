@@ -6,6 +6,6 @@ import java.util.Map;
 
 public interface GiftCard {
 
-    double isRegular(Customer customer, Map<String, Double> map, double total);
+    void isRegular(Customer customer, Map<String, Double> map, double total);
 
 }
