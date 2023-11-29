@@ -1,7 +1,8 @@
 require("dotenv").config();
 require("./config/database").connect();
 const express = require("express");
-
+var bcrypt = require("bcryptjs");
+var jwt = require("jsonwebtoken")
 const app = express();
 
 app.use(express.json());
@@ -48,11 +49,11 @@ app.post("/login", async (req, res) => {
         // Create token
         const token = jwt.sign(
           { user_id: user._id, email },
-          process.env.TOKEN_KEY,
-          {
+          "asdfertjfnjkuiydjhkuyooemftymbsbh",
+          { 
             expiresIn: "2h",
           }
-        );
+        ); 
   
         // save user token
         user.token = token;
@@ -102,7 +103,7 @@ app.post("/register", async (req, res) => {
       // Create token
       const token = jwt.sign(
         { user_id: user._id, email },
-        process.env.TOKEN_KEY,
+        "asdfertjfnjkuiydjhkuyooemftymbsbh",
         {
           expiresIn: "2h",
         }
