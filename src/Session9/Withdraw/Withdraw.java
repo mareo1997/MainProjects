@@ -4,6 +4,6 @@ import Session9.Customer;
 
 public interface Withdraw {
 
-    void withdrawCash(Customer cust);
+    void withdrawCash(Customer c);
 
 }

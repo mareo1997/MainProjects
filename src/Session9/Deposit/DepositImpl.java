@@ -14,12 +14,8 @@ public class DepositImpl implements Deposit {
         int account = in.nextInt();
         in.nextLine();  // Consume newline left-over
 
-//        if (account > c.getAccountBal()) {
-//            System.out.println("Cant over draw account.");
-//        } else {
         c.setAccountBal(c.getAccountBal() + account);
         System.out.println("You have deposited $" + account + ".");
         System.out.println("Current balance is $" + c.getAccountBal() + ".");
-//        }
     }
 }
