@@ -2,9 +2,9 @@ package Session7;
 
 public class Menu {
 
-    private final double flowerAmount = 20;
-    private final double greetingAmount = 30;
-    private final double photoFrameAmount = 100;
+    private final double flowerAmount = 2.50;
+    private final double greetingAmount = 3.25;
+    private final double photoFrameAmount = 9.99;
 
     @Override
     public String toString() {

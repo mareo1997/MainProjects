@@ -18,7 +18,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         boolean stop = false;
         double total = 0;
-        Map<String, Double> map = null;
+        Map<String, Double> map = new HashMap<>();
 
         Customer customer = new Customer("Mareo", "9543052814", "Regular", 250);
 
@@ -28,7 +28,6 @@ public class Main {
         System.out.println();
 
         while (!stop) {
-            map = new HashMap<>();
             try {
 
                 ProcessBillImpl processBillImpl = new ProcessBillImpl(menu);
