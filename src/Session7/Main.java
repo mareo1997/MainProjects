@@ -34,22 +34,21 @@ public class Main {
 
                 map = processBillImpl.Bill(menu, in);
 
+                ProcessOrderImpl processOrderImpl = new ProcessOrderImpl();
+
+                total = processOrderImpl.Order(map, in);
+
+                System.out.println("Are you satisfied with your order?");
+                response = in.nextLine();
+                if (response.equalsIgnoreCase("yes")) {
+                    stop = true;
+                }
             } catch (InputMismatchException e) {
                 System.out.println("The information you entered is not correct please try again.");
                 System.out.println();
                 in.nextLine();  // Consume newline left-over
             }
             System.out.println();
-
-            ProcessOrderImpl processOrderImpl = new ProcessOrderImpl();
-
-            total = processOrderImpl.Order(map, in);
-
-            System.out.println("Are you satisfied with your order?");
-            response = in.nextLine();
-            if (response.equalsIgnoreCase("yes")) {
-                stop = true;
-            }
         }
 
         GiftCardCardImpl giftCard = new GiftCardCardImpl();
