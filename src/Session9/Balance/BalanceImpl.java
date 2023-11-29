@@ -1,4 +1,6 @@
-package Session9;
+package Session9.Balance;
+
+import Session9.Customer;
 
 public class BalanceImpl implements Balance {
     @Override

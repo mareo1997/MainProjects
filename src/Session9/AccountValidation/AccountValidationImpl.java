@@ -1,4 +1,6 @@
-package Session9;
+package Session9.AccountValidation;
+
+import Session9.Customer;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,6 @@
-package Session9;
+package Session9.Withdraw;
+
+import Session9.Customer;
 
 import java.util.Scanner;
 
@@ -15,7 +17,7 @@ public class WithdrawImpl implements Withdraw {
         if (account > c.getAccountBal()) {
             System.out.println("Cant over draw account.");
         } else {
-            c.setAccountBal(c.getAccountBal()-account);
+            c.setAccountBal(c.getAccountBal() - account);
             System.out.println("You have withdrawn $" + account + ".");
             System.out.println("Current balance is $" + c.getAccountBal() + ".");
         }

@@ -1,4 +1,6 @@
-package Session9;
+package Session9.Withdraw;
+
+import Session9.Customer;
 
 public interface Withdraw {
 

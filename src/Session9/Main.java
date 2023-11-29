@@ -1,6 +1,12 @@
 package Session9;
 
 
+import Session9.AccountValidation.AccountValidationImpl;
+import Session9.Balance.BalanceImpl;
+import Session9.Cheque.ChequeImpl;
+import Session9.Deposit.DepositImpl;
+import Session9.Withdraw.WithdrawImpl;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -31,7 +37,7 @@ public class Main {
                 System.out.println();
 
                 AccountValidationImpl accountValidationImpl = new AccountValidationImpl();
-                 cust = accountValidationImpl.validateAccount(customerArrayList, account, pin);
+                cust = accountValidationImpl.validateAccount(customerArrayList, account, pin);
 
                 if (cust == null) {
                     System.out.println("Could not find this account. Please check your number and pin again.");
@@ -46,7 +52,7 @@ public class Main {
         }
         while (true) {
             try {
-                System.out.println("Welcome to your your account.");
+                System.out.println("Welcome to your your account " + cust.getName() + ".");
                 System.out.println("1. Withdraw Cash.");
                 System.out.println("2. Deposit Cash.");
                 System.out.println("3. View Balance.");
@@ -74,7 +80,7 @@ public class Main {
                         cheque.depositCheque(cust);
                     }
                     case 5 -> {
-                        System.out.println("Logging out of your account.");
+                        System.out.println("Logging out of your account " + cust.getName() + ".");
                         exit(0);
                     }
                     default -> {

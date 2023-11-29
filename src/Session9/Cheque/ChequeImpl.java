@@ -1,8 +1,10 @@
-package Session9;
+package Session9.Cheque;
+
+import Session9.Customer;
 
 import java.util.Scanner;
 
-public class ChequeImpl implements Cheque{
+public class ChequeImpl implements Cheque {
 
     Scanner in = new Scanner(System.in);
 
@@ -15,7 +17,7 @@ public class ChequeImpl implements Cheque{
 //        if (account > c.getAccountBal()) {
 //            System.out.println("Cant over draw account.");
 //        } else {
-        c.setAccountBal(c.getAccountBal()+account);
+        c.setAccountBal(c.getAccountBal() + account);
         System.out.println("You have deposited a cheque worth $" + account + ".");
         System.out.println("Current balance is $" + c.getAccountBal() + ".");
 //        }
