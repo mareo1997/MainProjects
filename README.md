@@ -100,3 +100,4 @@ You can create a thread by extending the Thread class and overriding its run met
 2. Implementing the Runnable Interface:
 Another way to create a thread is by implementing the Runnable interface. This approach is often preferred as it allows better separation of concerns between the thread's behavior and the class's other responsibilities:
 
+
