@@ -123,3 +123,12 @@ Asynchronous Programming:
 
 Multithreading facilitates asynchronous programming, where tasks can run independently without waiting for the completion of others. This is especially useful for handling I/O operations or events that might otherwise cause the program to block.
 
+life cycle of a thread in Java
+New: The thread is created but not yet started.
+Runnable: The thread is ready to run but is not currently running.
+Running: The thread is currently executing code.
+Blocked: The thread is waiting for something to happen, such as a lock to be released or an I/O operation to complete.
+Dead: The thread has finished executing and cannot be restarted.
+
+Synchronized is used to control access to shared resources. When code is synchronized, only one thread can execute it at a time. This prevents race conditions and ensures that the shared resource is always in a consistent state.
+
