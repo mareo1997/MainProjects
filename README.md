@@ -92,3 +92,11 @@ Iterating through a HashMap involves working with key-value pairs.
 Iterating through a HashSet involves working with individual elements.
 
 Multithreading in Java refers to the concurrent execution of two or more threads within a single program. A thread is the smallest unit of a process that can be scheduled by the operating system. Multithreading allows for the execution of multiple threads concurrently, which can lead to improved performance and responsiveness in certain applications.
+
+In Java, multithreading can be achieved in two main ways:
+
+1. Extending the Thread Class:
+You can create a thread by extending the Thread class and overriding its run method.
+2. Implementing the Runnable Interface:
+Another way to create a thread is by implementing the Runnable interface. This approach is often preferred as it allows better separation of concerns between the thread's behavior and the class's other responsibilities:
+
