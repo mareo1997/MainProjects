@@ -92,3 +92,43 @@ Iterating through a HashMap involves working with key-value pairs.
 Iterating through a HashSet involves working with individual elements.
 
 Multithreading in Java refers to the concurrent execution of two or more threads within a single program. A thread is the smallest unit of a process that can be scheduled by the operating system. Multithreading allows for the execution of multiple threads concurrently, which can lead to improved performance and responsiveness in certain applications.
+
+In Java, multithreading can be achieved in two main ways:
+
+1. Extending the Thread Class:
+You can create a thread by extending the Thread class and overriding its run method.
+2. Implementing the Runnable Interface:
+Another way to create a thread is by implementing the Runnable interface. This approach is often preferred as it allows better separation of concerns between the thread's behavior and the class's other responsibilities:
+
+Improved Performance:
+
+One of the primary benefits of multithreading is improved performance. By executing multiple threads concurrently, a program can make better use of available CPU resources and, as a result, perform tasks more quickly.
+Increased Responsiveness:
+
+Multithreading can enhance the responsiveness of applications, particularly in user interfaces. By running time-consuming tasks in separate threads, the main thread remains responsive to user interactions, providing a smoother and more interactive user experience.
+Parallelism:
+
+Multithreading enables parallelism, where multiple tasks can be performed simultaneously. This is particularly advantageous on multi-core processors, as different threads can be executed on different cores, maximizing overall system throughput.
+
+Resource Utilization:
+
+Efficient use of system resources is another benefit. Multithreading allows programs to make better use of available CPU time, reducing idle time and maximizing resource utilization.
+Concurrency:
+
+Concurrency is the ability to execute multiple tasks at the same time. Multithreading supports concurrent execution of tasks, which is crucial for applications that need to handle multiple activities simultaneously.
+Task Decomposition:
+
+Breaking down complex tasks into smaller, more manageable threads can simplify program design. Each thread can focus on a specific aspect of the task, making the code more modular and easier to understand.
+Asynchronous Programming:
+
+Multithreading facilitates asynchronous programming, where tasks can run independently without waiting for the completion of others. This is especially useful for handling I/O operations or events that might otherwise cause the program to block.
+
+life cycle of a thread in Java
+New: The thread is created but not yet started.
+Runnable: The thread is ready to run but is not currently running.
+Running: The thread is currently executing code.
+Blocked: The thread is waiting for something to happen, such as a lock to be released or an I/O operation to complete.
+Dead: The thread has finished executing and cannot be restarted.
+
+Synchronized is used to control access to shared resources. When code is synchronized, only one thread can execute it at a time. This prevents race conditions and ensures that the shared resource is always in a consistent state.
+
