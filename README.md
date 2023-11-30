@@ -64,3 +64,31 @@ LinkedList:
 Uses a doubly-linked list to store elements.
 Insertions and deletions at arbitrary positions are faster because it involves adjusting pointers, not shifting elements.
 Accessing elements by index requires traversing the list from the beginning or end, making it slower than ArrayList.
+
+Both HashMap and HashSet are part of the Java Collections Framework and are used to store and manage collections of elements. They are both implementations of the Map and Set interfaces, respectively, and they share some similarities but also have key differences.
+
+both HashMap and HashSet share some similarities in terms of not guaranteeing order and allowing null elements, their main differences lie in their intended use cases (key-value mappings vs. unique element storage) and the specific interfaces they implement.
+
+HashMap is designed for key-value mappings.
+HashSet is designed for storing unique elements.
+Interfaces Implemented:
+
+HashMap implements the Map interface.
+HashSet implements the Set interface.
+Usage:
+
+Use HashMap when you need to store key-value pairs.
+Use HashSet when you need to store a collection of unique elements.
+Nulls:
+
+HashMap allows one null key and multiple null values.
+HashSet allows a single null element.
+Duplication:
+
+HashMap allows duplicate values but not duplicate keys.
+HashSet does not allow duplicate elements.
+Iteration:
+
+Iterating through a HashMap involves working with key-value pairs.
+Iterating through a HashSet involves working with individual elements.
+
