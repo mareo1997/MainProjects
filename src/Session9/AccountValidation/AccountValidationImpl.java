@@ -1,5 +1,6 @@
 package Session9.AccountValidation;
 
+import Session10.User;
 import Session9.Customer;
 
 import java.util.ArrayList;
@@ -7,16 +8,12 @@ import java.util.ArrayList;
 public class AccountValidationImpl implements AccountValidation {
 
     @Override
-    public Customer validateAccount(ArrayList<Customer> customerArrayList, int account, int pin) {
-
-        for (Customer c : customerArrayList) {
-            if (c.getAccountNumber() == account && c.getPin() == pin) {
+    public User validateAccount(ArrayList<User> customerArrayList, String account, String pin) {
+        for (User c : customerArrayList) {
+            if (c.getUsername().equalsIgnoreCase( account )&& c.getPassword().equals(pin)) {
                 return c;
-//                break;
             }
         }
-
-
         return null;
     }
 }
