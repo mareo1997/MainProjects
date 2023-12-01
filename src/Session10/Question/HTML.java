@@ -15,8 +15,7 @@ public class HTML implements Questions {
                 A. <head>
                 B. <p>
                 C. <body>
-                D. <a>
-                """);
+                D. <a>""");
         answer = in.nextLine();
         if ("a".equalsIgnoreCase(answer)) {
             points += 2;
@@ -27,8 +26,7 @@ public class HTML implements Questions {
                 A. HyperText Markup Language
                 B. HighText Markup Language.
                 C. HyperText Markdown Language.
-                D. None of the above.
-                """);
+                D. None of the above.""");
         answer = in.nextLine();
         if ("a".equalsIgnoreCase(answer)) {
             points += 2;
@@ -39,8 +37,7 @@ public class HTML implements Questions {
                 A. 5
                 B. 1
                 C. 3
-                D. 6
-                """);
+                D. 6""");
         answer = in.nextLine();
         if ("d".equalsIgnoreCase(answer)) {
             points += 2;
@@ -51,8 +48,7 @@ public class HTML implements Questions {
                 A. h1
                 B. h2
                 C. h6
-                D. h4
-                """);
+                D. h4""");
         answer = in.nextLine();
         if ("c".equalsIgnoreCase(answer)) {
             points += 2;
@@ -63,8 +59,7 @@ public class HTML implements Questions {
                 A. Bulleted, Numbered Lists.
                 B. Ordered, Unordered Lists.
                 C. Named, Unnamed Lists.
-                D. None of the above.
-                """);
+                D. None of the above.""");
         answer = in.nextLine();
         if ("b".equalsIgnoreCase(answer)) {
             points += 2;

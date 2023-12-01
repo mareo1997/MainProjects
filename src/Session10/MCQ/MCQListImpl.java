@@ -24,7 +24,7 @@ public class MCQListImpl implements MCQList {
                 points = css.questionsForTest();
             }
         }
-        return points;
+        return points*10;
     }
 
 }

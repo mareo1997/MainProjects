@@ -47,13 +47,12 @@ public class Main {
                 u = accountValidationImpl.validateAccount(userList, username, password);
 
                 if (u == null) {
-                    System.out.println("Could not find this username. Please check your number and password again.");
+                    System.out.println("Could not find this username. Please check your number and password again.\n");
                 } else {
                     break;
                 }
             } catch (NullPointerException e) {
-                System.out.println("Could not find this username. Please check your number and password again.");
-                System.out.println();
+                System.out.println("Could not find this username. Please check your number and password again.\n");
 //                in.nextLine();  // Consume newline left-over
             } catch (Exception e) {
                 e.printStackTrace();
@@ -80,13 +79,8 @@ public class Main {
             if (b) {
                 MCQListImpl mcqListImpl = new MCQListImpl();
                 points = mcqListImpl.testList(answer);
-                scoreList.add(points * 10);
+                scoreList.add(points);
                 u.setScores(scoreList);
-//                UserQuizzes a = u.getUserQuiz();
-//                ArrayList<String> c = a.getTest();
-//                c.remove(0);
-//                a.setTest(c);
-//                u.setUserQuiz(a);
 
                 QuizResultImpl quizResultImpl = new QuizResultImpl();
                 quizResultImpl.pass(points);
@@ -94,9 +88,6 @@ public class Main {
             } else {
                 System.out.println("This " + answer + " test is not applied to you. Please try again.\n");
             }
-
-//            System.out.println(u);
-//            break;
         }
 
     }

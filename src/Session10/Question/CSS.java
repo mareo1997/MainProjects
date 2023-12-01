@@ -14,8 +14,7 @@ public class CSS implements Questions {
                 A. Coloured Special Sheets
                 B. Cascading Style Sheets
                 C. Color and Style Sheets
-                D. None of the above
-                """);
+                D. None of the above""");
         String answer = in.nextLine();
         if ("b".equalsIgnoreCase(answer)) {
             points += 2;
@@ -48,15 +47,14 @@ public class CSS implements Questions {
                 A. 1
                 B. 2
                 C. 3
-                D. 4
-                """);
+                D. 4""");
         answer = in.nextLine();
         if ("c".equalsIgnoreCase(answer)) {
             points += 2;
         }
 
         System.out.println("""
-                What type of CSS is the following code snippet? <h1 style="color:blue;">A Blue Heading</h1>\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040\040
+                What type of CSS is the following code snippet? <h1 style="color:blue;">A Blue Heading</h1>
                 A. Inline
                 B. Internal
                 C. External

@@ -16,8 +16,7 @@ public class Java implements Questions {
                 A. 6
                 B. 7
                 C. 8
-                D. 9
-                """);
+                D. 9""");
         answer = in.nextLine();
         if ("c".equalsIgnoreCase(answer)) {
             points += 2;
@@ -28,8 +27,7 @@ public class Java implements Questions {
                 A. char[] ch = new char(5)
                 B. char[] ch = new char[5]
                 C. char[] ch = new char()
-                D. char[] ch = new char[]
-                """);
+                D. char[] ch = new char[]""");
         answer = in.nextLine();
         if ("b".equalsIgnoreCase(answer)) {
             points += 2;
@@ -40,8 +38,7 @@ public class Java implements Questions {
                 A. The reference of the array
                 B. A copy of the array
                 C. Length of the array
-                D. Copy of first element
-                """);
+                D. Copy of first element""");
         answer = in.nextLine();
         if ("a".equalsIgnoreCase(answer)) {
             points += 2;
@@ -52,8 +49,7 @@ public class Java implements Questions {
                 A. int[] A = {}
                 B. int[] A = {1, 2, 3}
                 C. int[] A = (1, 2, 3)
-                D. int[][] A = {1,2,3}
-                """);
+                D. int[][] A = {1,2,3}""");
         answer = in.nextLine();
         if ("b".equalsIgnoreCase(answer)) {
             points += 2;
@@ -64,8 +60,7 @@ public class Java implements Questions {
                 A. Object references
                 B. Objects
                 C. Primitive data type
-                D. None
-                """);
+                D. None""");
         answer = in.nextLine();
         if ("b".equalsIgnoreCase(answer)) {
             points += 2;
