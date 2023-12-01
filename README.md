@@ -68,6 +68,7 @@ Accessing elements by index requires traversing the list from the beginning or e
 Both HashMap and HashSet are part of the Java Collections Framework and are used to store and manage collections of elements. They are both implementations of the Map and Set interfaces, respectively, and they share some similarities but also have key differences.
 
 both HashMap and HashSet share some similarities in terms of not guaranteeing order and allowing null elements, their main differences lie in their intended use cases (key-value mappings vs. unique element storage) and the specific interfaces they implement.
+
 HashMap is designed for key-value mappings.
 HashSet is designed for storing unique elements.
 Interfaces Implemented:
@@ -131,4 +132,3 @@ Blocked: The thread is waiting for something to happen, such as a lock to be rel
 Dead: The thread has finished executing and cannot be restarted.
 
 Synchronized is used to control access to shared resources. When code is synchronized, only one thread can execute it at a time. This prevents race conditions and ensures that the shared resource is always in a consistent state.
-
