@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public interface AccountValidation {
 
-     User validateAccount(ArrayList<User> customerArrayList, String account, String pin);
+    User validateAccount(ArrayList<User> customerArrayList, String account, String pin);
 
 }

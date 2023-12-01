@@ -27,7 +27,7 @@ public class CSS implements Questions {
                 B. color
                 C. Both A and B
                 D. None of the above""");
-         answer = in.nextLine();
+        answer = in.nextLine();
         if ("a".equalsIgnoreCase(answer)) {
             points += 2;
         }
@@ -38,7 +38,7 @@ public class CSS implements Questions {
                 B. color
                 C. Both A and B
                 D. None of the above""");
-         answer = in.nextLine();
+        answer = in.nextLine();
         if ("b".equalsIgnoreCase(answer)) {
             points += 2;
         }
@@ -50,7 +50,7 @@ public class CSS implements Questions {
                 C. 3
                 D. 4
                 """);
-         answer = in.nextLine();
+        answer = in.nextLine();
         if ("c".equalsIgnoreCase(answer)) {
             points += 2;
         }

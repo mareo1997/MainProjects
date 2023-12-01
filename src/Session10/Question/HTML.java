@@ -17,7 +17,7 @@ public class HTML implements Questions {
                 C. <body>
                 D. <a>
                 """);
-         answer = in.nextLine();
+        answer = in.nextLine();
         if ("a".equalsIgnoreCase(answer)) {
             points += 2;
         }

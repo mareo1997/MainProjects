@@ -3,7 +3,7 @@ package Session10.QuizResult;
 public class QuizResultImpl implements QuizResult {
 
     @Override
-    public void Pass(int points) {
+    public void pass(int points) {
         System.out.println("You scored " + points + " points.");
         if (points >= 8) {
             System.out.println("You meet the 80% threshold!");

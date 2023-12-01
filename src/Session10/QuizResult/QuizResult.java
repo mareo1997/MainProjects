@@ -2,6 +2,6 @@ package Session10.QuizResult;
 
 public interface QuizResult {
 
-    void Pass(int points);
+    void pass(int points);
 
 }

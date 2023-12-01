@@ -6,6 +6,4 @@ public interface AssignedQuizzes {
 
     boolean findQuiz(String answer, ArrayList<String> userQuiz);
 
-//    int MCQ(String answer);
-
 }

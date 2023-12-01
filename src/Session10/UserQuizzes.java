@@ -17,8 +17,8 @@ public class UserQuizzes {
 
         StringBuilder result = new StringBuilder("You have to do the following tests before deadline\n");
         int index = 0;
-        for(String t: test){
-            index+=1;
+        for (String t : test) {
+            index += 1;
             result.append(index).append(" ").append(t).append("\n");
         }
 

@@ -89,7 +89,7 @@ public class Main {
 //                u.setUserQuiz(a);
 
                 QuizResultImpl quizResultImpl = new QuizResultImpl();
-                quizResultImpl.Pass(points);
+                quizResultImpl.pass(points);
 
             } else {
                 System.out.println("This " + answer + " test is not applied to you. Please try again.\n");
