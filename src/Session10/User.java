@@ -8,6 +8,7 @@ public class User {
     private ArrayList<Integer> scores;
     private String password;
     private int id;
+    private UserQuizes userQuiz;
 
     public User(int id, String username, String password, ArrayList<Integer> scores) {
         this.id = id;
@@ -16,12 +17,39 @@ public class User {
         this.scores = scores;
     }
 
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(int id, String username, String password, UserQuizes userQuiz) {
+        this.id = id;
+        this.userQuiz = userQuiz;
+        this.username = username;
+        this.password = password;
+
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public UserQuizes getUserQuiz() {
+        return userQuiz;
+    }
+
+    public void setUserQuiz(UserQuizes userQuiz) {
+        this.userQuiz = userQuiz;
     }
 
     public ArrayList<Integer> getScores() {
