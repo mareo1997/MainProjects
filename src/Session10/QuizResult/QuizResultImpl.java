@@ -1,6 +1,6 @@
-package Session10;
+package Session10.QuizResult;
 
-public class QuizResult implements QuizR {
+public class QuizResultImpl implements QuizResult {
 
     @Override
     public void Pass(int points) {
@@ -8,7 +8,7 @@ public class QuizResult implements QuizR {
         if (points >= 8) {
             System.out.println("You meet the 80% threshold!");
         } else {
-            System.out.println("You did not meet the 80% threshold.");
+            System.out.println("You did not meet the 80% threshold.\n");
         }
     }
 

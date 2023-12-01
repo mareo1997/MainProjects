@@ -1,11 +1,13 @@
-package Session10;
+package Session10.Question;
 
-import static Session10.Quizzes.in;
+import java.util.Scanner;
 
-public class HTML implements a {
+public class HTML implements Questions {
+
+    static Scanner in = new Scanner(System.in);
 
     @Override
-    public int question() {
+    public int questionsForTest() {
         int points = 0;
         String answer;
         System.out.println("""

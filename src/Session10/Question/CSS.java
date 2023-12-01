@@ -1,11 +1,13 @@
-package Session10;
+package Session10.Question;
 
-import static Session10.Quizzes.in;
+import java.util.Scanner;
 
-public class CSS implements a {
+public class CSS implements Questions {
+
+    static Scanner in = new Scanner(System.in);
 
     @Override
-    public int question() {
+    public int questionsForTest() {
         int points = 0;
         System.out.println("""
                 The full form of CSS is:

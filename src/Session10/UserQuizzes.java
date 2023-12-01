@@ -2,17 +2,12 @@ package Session10;
 
 import java.util.ArrayList;
 
-public class UserQuizes {
-
+public class UserQuizzes {
 
     private int id;
     private ArrayList<String> test;
 
-    public UserQuizes() {
-
-    }
-
-    public UserQuizes(ArrayList<String> test) {
+    public UserQuizzes(ArrayList<String> test) {
 
         this.test = test;
     }
@@ -20,10 +15,11 @@ public class UserQuizes {
     @Override
     public String toString() {
 
-        StringBuilder result = new StringBuilder("You have to do the following test before deadline\n");
-
+        StringBuilder result = new StringBuilder("You have to do the following tests before deadline\n");
+        int index = 0;
         for(String t: test){
-            result.append(t).append("\n");
+            index+=1;
+            result.append(index).append(" ").append(t).append("\n");
         }
 
         return result.toString();

@@ -1,23 +1,27 @@
-package Session10;
+package Session10.MCQ;
 
-public class MCQClass implements b {
+import Session10.Question.CSS;
+import Session10.Question.HTML;
+import Session10.Question.Java;
+
+public class MCQListImpl implements MCQList {
 
     @Override
-    public int tests(String s) {
+    public int testList(String s) {
         int points = 0;
 
         switch (s.toUpperCase()) {
             case "JAVA" -> {
                 Java java = new Java();
-                points = java.question();
+                points = java.questionsForTest();
             }
             case "HTML" -> {
                 HTML html = new HTML();
-                points = html.question();
+                points = html.questionsForTest();
             }
             case "CSS" -> {
                 CSS css = new CSS();
-                points = css.question();
+                points = css.questionsForTest();
             }
         }
         return points;

@@ -8,47 +8,40 @@ public class User {
     private ArrayList<Integer> scores;
     private String password;
     private int id;
-    private UserQuizes userQuiz;
+    private UserQuizzes userQuiz;
 
-    public User(int id, String username, String password, ArrayList<Integer> scores) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.scores = scores;
-    }
+//    public User(int id, String username, String password, UserQuizzes userQuiz) {
+//        this.id = id;
+//        this.userQuiz = userQuiz;
+//        this.username = username;
+//        this.password = password;
+//        this.scores = scores;
+//    }
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(int id, String username, String password, UserQuizes userQuiz) {
+    public User(int id, String username, String password, UserQuizzes userQuiz, ArrayList<Integer> scores) {
         this.id = id;
         this.userQuiz = userQuiz;
         this.username = username;
         this.password = password;
-
+        this.scores = scores;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
+                ", scores=" + scores +
                 ", password='" + password + '\'' +
+                ", id=" + id +
+                ", userQuiz=" + userQuiz +
                 '}';
     }
 
-    public UserQuizes getUserQuiz() {
+    public UserQuizzes getUserQuiz() {
         return userQuiz;
     }
 
-    public void setUserQuiz(UserQuizes userQuiz) {
+    public void setUserQuiz(UserQuizzes userQuiz) {
         this.userQuiz = userQuiz;
     }
 
